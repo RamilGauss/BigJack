@@ -1,0 +1,206 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Common">
+      <UniqueIdentifier>{d14cc99f-5140-4790-a678-4d95a7f0a2cf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common\Include">
+      <UniqueIdentifier>{22009cf4-0718-4046-88fc-5a3a585c6606}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common\Src">
+      <UniqueIdentifier>{64142259-bf52-47ea-8a08-4cd4d2d4ad70}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common\Include\System">
+      <UniqueIdentifier>{3420b2df-31ac-4ff2-a1b8-3f2bc4859065}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common\Include\Threading">
+      <UniqueIdentifier>{e966a365-2778-4ef4-bbfe-226246720817}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common\Include\Utils">
+      <UniqueIdentifier>{4f261c11-5c60-4519-8983-eb66c9ad28df}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common\Src\Utils">
+      <UniqueIdentifier>{452f882a-9f66-452f-b609-8afc3088e7e8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common\Src\Threading">
+      <UniqueIdentifier>{ecdad430-6bac-4235-8436-345ed4dfd468}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common\Src\System">
+      <UniqueIdentifier>{335d3184-1e8f-48a3-bda1-04b85979bee9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common\Include\System\Desktop">
+      <UniqueIdentifier>{bf3bfe1f-a2ec-4b62-b6c7-7b9ec91f8894}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common\Src\System\Desktop">
+      <UniqueIdentifier>{9726779e-f559-4221-9d6b-b8c89b6cf76c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common\Include\System\Android">
+      <UniqueIdentifier>{76137e63-1eaa-48ab-8771-acbf1f197266}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common\Src\System\Android">
+      <UniqueIdentifier>{db535da5-c84a-4923-9548-cf8801ed2467}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="..\..\conanfile.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="TypeDef.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PostprocessingGameState.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\include\BaseSystem.h">
+      <Filter>Common\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\include\CameraController.h">
+      <Filter>Common\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\include\GameEntity.h">
+      <Filter>Common\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\include\GameEntityManager.h">
+      <Filter>Common\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\include\GameState.h">
+      <Filter>Common\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\include\GraphicsSystem.h">
+      <Filter>Common\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\include\InputListeners.h">
+      <Filter>Common\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\include\LogicSystem.h">
+      <Filter>Common\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\include\MainEntryPointHelper.h">
+      <Filter>Common\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\include\SdlEmulationLayer.h">
+      <Filter>Common\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\include\SdlInputHandler.h">
+      <Filter>Common\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\include\TutorialGameState.h">
+      <Filter>Common\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\include\Utils\HdrUtils.h">
+      <Filter>Common\Include\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\include\Utils\MeshUtils.h">
+      <Filter>Common\Include\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\include\Utils\MiscUtils.h">
+      <Filter>Common\Include\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\include\Utils\ScreenSpaceReflections.h">
+      <Filter>Common\Include\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\include\Utils\SmaaUtils.h">
+      <Filter>Common\Include\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\include\Utils\TestUtils.h">
+      <Filter>Common\Include\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\include\Threading\MessageQueueSystem.h">
+      <Filter>Common\Include\Threading</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\include\Threading\MqMessages.h">
+      <Filter>Common\Include\Threading</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\include\Threading\YieldTimer.h">
+      <Filter>Common\Include\Threading</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\include\System\MainEntryPoints.h">
+      <Filter>Common\Include\System</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\include\System\StaticPluginLoader.h">
+      <Filter>Common\Include\System</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\include\System\Desktop\UnitTesting.h">
+      <Filter>Common\Include\System\Desktop</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\include\System\Android\AndroidSystems.h">
+      <Filter>Common\Include\System\Android</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Postprocessing.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PostprocessingGameState.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Common\src\BaseSystem.cpp">
+      <Filter>Common\Src</Filter>
+    </ClCompile>
+    <ClCompile Include="Common\src\CameraController.cpp">
+      <Filter>Common\Src</Filter>
+    </ClCompile>
+    <ClCompile Include="Common\src\GameEntityManager.cpp">
+      <Filter>Common\Src</Filter>
+    </ClCompile>
+    <ClCompile Include="Common\src\GraphicsSystem.cpp">
+      <Filter>Common\Src</Filter>
+    </ClCompile>
+    <ClCompile Include="Common\src\LogicSystem.cpp">
+      <Filter>Common\Src</Filter>
+    </ClCompile>
+    <ClCompile Include="Common\src\SdlInputHandler.cpp">
+      <Filter>Common\Src</Filter>
+    </ClCompile>
+    <ClCompile Include="Common\src\TutorialGameState.cpp">
+      <Filter>Common\Src</Filter>
+    </ClCompile>
+    <ClCompile Include="Common\src\Utils\HdrUtils.cpp">
+      <Filter>Common\Src\Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="Common\src\Utils\MeshUtils.cpp">
+      <Filter>Common\Src\Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="Common\src\Utils\MiscUtils.cpp">
+      <Filter>Common\Src\Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="Common\src\Utils\ScreenSpaceReflections.cpp">
+      <Filter>Common\Src\Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="Common\src\Utils\SmaaUtils.cpp">
+      <Filter>Common\Src\Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="Common\src\Utils\TestUtils.cpp">
+      <Filter>Common\Src\Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="Common\src\Threading\MessageQueueSystem.cpp">
+      <Filter>Common\Src\Threading</Filter>
+    </ClCompile>
+    <ClCompile Include="Common\src\System\Desktop\MainLoopMultiThreaded.cpp">
+      <Filter>Common\Src\System\Desktop</Filter>
+    </ClCompile>
+    <ClCompile Include="Common\src\System\Desktop\MainLoopSingleThreaded.cpp">
+      <Filter>Common\Src\System\Desktop</Filter>
+    </ClCompile>
+    <ClCompile Include="Common\src\System\Desktop\UnitTesting.cpp">
+      <Filter>Common\Src\System\Desktop</Filter>
+    </ClCompile>
+    <ClCompile Include="Common\src\System\MainEntryPoints.cpp">
+      <Filter>Common\Src\System</Filter>
+    </ClCompile>
+    <ClCompile Include="Common\src\System\StaticPluginLoader.cpp">
+      <Filter>Common\Src\System</Filter>
+    </ClCompile>
+    <ClCompile Include="Common\src\System\Android\AndroidSystems.cpp">
+      <Filter>Common\Src\System\Android</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

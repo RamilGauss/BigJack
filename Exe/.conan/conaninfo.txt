@@ -1,0 +1,43 @@
+[settings]
+    arch=x86_64
+    build_type=Debug
+    compiler=Visual Studio
+    compiler.runtime=MDd
+    compiler.version=16
+    os=Windows
+
+[requires]
+    rapidjson/1.Y.Z
+    sdl/2.Y.Z
+
+[options]
+
+
+[full_settings]
+    arch=x86_64
+    arch_build=x86_64
+    build_type=Debug
+    compiler=Visual Studio
+    compiler.runtime=MDd
+    compiler.toolset=v142
+    compiler.version=16
+    os=Windows
+    os_build=Windows
+
+[full_requires]
+    rapidjson/1.1.0:5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9
+    sdl/2.0.18:7fbacd5d9c153ab2ef076669a9067213bac1a6f9
+
+[full_options]
+    sdl:directx=True
+    sdl:opengl=True
+    sdl:opengles=True
+    sdl:sdl2main=True
+    sdl:shared=True
+    sdl:vulkan=True
+
+[recipe_hash]
+
+
+[env]
+
