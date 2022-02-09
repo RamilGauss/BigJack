@@ -30,7 +30,6 @@
     <ClInclude Include="Common\include\GraphicsSystem.h" />
     <ClInclude Include="Common\include\InputListeners.h" />
     <ClInclude Include="Common\include\LogicSystem.h" />
-    <ClInclude Include="Common\include\MainEntryPointHelper.h" />
     <ClInclude Include="Common\include\SdlEmulationLayer.h" />
     <ClInclude Include="Common\include\SdlInputHandler.h" />
     <ClInclude Include="Common\include\System\Android\AndroidSystems.h" />
@@ -47,6 +46,10 @@
     <ClInclude Include="Common\include\Utils\ScreenSpaceReflections.h" />
     <ClInclude Include="Common\include\Utils\SmaaUtils.h" />
     <ClInclude Include="Common\include\Utils\TestUtils.h" />
+    <ClInclude Include="GraphicEngineContext.h" />
+    <ClInclude Include="GraphicEngine_Ogre_ImGui.h" />
+    <ClInclude Include="IGraphicEngine_Ogre_ImGui.h" />
+    <ClInclude Include="IRenderable.h" />
     <ClInclude Include="PostprocessingGameState.h" />
     <ClInclude Include="TypeDef.h" />
   </ItemGroup>
@@ -71,6 +74,8 @@
     <ClCompile Include="Common\src\Utils\ScreenSpaceReflections.cpp" />
     <ClCompile Include="Common\src\Utils\SmaaUtils.cpp" />
     <ClCompile Include="Common\src\Utils\TestUtils.cpp" />
+    <ClCompile Include="GraphicEngineContext.cpp" />
+    <ClCompile Include="GraphicEngine_Ogre_ImGui.cpp" />
     <ClCompile Include="Postprocessing.cpp" />
     <ClCompile Include="PostprocessingGameState.cpp" />
   </ItemGroup>

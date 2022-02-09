@@ -54,9 +54,6 @@ namespace Demo
 
         //Free memory
         v1Mesh->unload();
-
-        // Do not destroy mesh, it could be used to recover from lost device.
-        //Ogre::v1::MeshManager::getSingleton().remove( meshName );
     }
     //-----------------------------------------------------------------------------------
     void PostprocessingGameState::createCustomTextures(void)
@@ -750,4 +747,5 @@ namespace Demo
             TutorialGameState::keyReleased( arg );
         }
     }
+    //-----------------------------------------------------------------------------------
 }

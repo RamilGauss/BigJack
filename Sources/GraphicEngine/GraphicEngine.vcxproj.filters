@@ -83,9 +83,6 @@
     <ClInclude Include="Common\include\LogicSystem.h">
       <Filter>Common\Include</Filter>
     </ClInclude>
-    <ClInclude Include="Common\include\MainEntryPointHelper.h">
-      <Filter>Common\Include</Filter>
-    </ClInclude>
     <ClInclude Include="Common\include\SdlEmulationLayer.h">
       <Filter>Common\Include</Filter>
     </ClInclude>
@@ -133,6 +130,18 @@
     </ClInclude>
     <ClInclude Include="Common\include\System\Android\AndroidSystems.h">
       <Filter>Common\Include\System\Android</Filter>
+    </ClInclude>
+    <ClInclude Include="IGraphicEngine_Ogre_ImGui.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GraphicEngine_Ogre_ImGui.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="IRenderable.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GraphicEngineContext.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -201,6 +210,12 @@
     </ClCompile>
     <ClCompile Include="Common\src\System\Android\AndroidSystems.cpp">
       <Filter>Common\Src\System\Android</Filter>
+    </ClCompile>
+    <ClCompile Include="GraphicEngine_Ogre_ImGui.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GraphicEngineContext.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

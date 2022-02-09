@@ -1,6 +1,5 @@
 
-#ifndef _Demo_GameState_H_
-#define _Demo_GameState_H_
+#pragma once
 
 #include "TypeDef.h"
 #include "InputListeners.h"
@@ -25,5 +24,3 @@ namespace Demo
         virtual void finishFrame(void) {}
     };
 }
-
-#endif

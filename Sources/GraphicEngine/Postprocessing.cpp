@@ -9,7 +9,6 @@
 #include "Compositor/OgreCompositorManager2.h"
 
 //Declares WinMain / main
-#include "MainEntryPointHelper.h"
 #include "System/Android/AndroidSystems.h"
 #include "System/MainEntryPoints.h"
 
@@ -21,7 +20,7 @@ namespace Demo
         {
             //Delegate compositor creation to the game state. It could be done here,
             //but we would later have to inform the game state about some data.
-            assert( dynamic_cast<PostprocessingGameState*>(mCurrentGameState) );
+            assert(dynamic_cast<PostprocessingGameState*>(mCurrentGameState));
             return static_cast<PostprocessingGameState*>(mCurrentGameState)->setupCompositor();
         }
 
@@ -30,16 +29,16 @@ namespace Demo
             GraphicsSystem::setupResources();
 
             Ogre::ConfigFile cf;
-            cf.load( AndroidSystems::openFile( mResourcePath + "resources2.cfg" ) );
+            cf.load(AndroidSystems::openFile(mResourcePath + "resources2.cfg"));
 
-            Ogre::String originalDataFolder = cf.getSetting( "DoNotUseAsResource", "Hlms", "" );
+            Ogre::String originalDataFolder = cf.getSetting("DoNotUseAsResource", "Hlms", "");
 
-            if( originalDataFolder.empty() )
+            if (originalDataFolder.empty())
                 originalDataFolder = AndroidSystems::isAndroid() ? "/" : "./";
-            else if( *(originalDataFolder.end() - 1) != '/' )
+            else if (*(originalDataFolder.end() - 1) != '/')
                 originalDataFolder += "/";
 
-            const char *c_locations[6] =
+            const char* c_locations[6] =
             {
                 "2.0/scripts/materials/TutorialSky_Postprocess",
                 "2.0/scripts/materials/Postprocessing",
@@ -55,49 +54,36 @@ namespace Demo
             Ogre::String dataFolder = originalDataFolder + "cubemapsJS.zip";
 #endif
 #if OGRE_PLATFORM != OGRE_PLATFORM_ANDROID
-            addResourceLocation( dataFolder, "Zip", "General" );
+            addResourceLocation(dataFolder, "Zip", "General");
 #else
-            addResourceLocation( dataFolder, "APKZip", "General" );
+            addResourceLocation(dataFolder, "APKZip", "General");
 #endif
 
-            for( size_t i=0; i<6; ++i )
-            {
+            for (size_t i = 0; i < 6; ++i) {
                 Ogre::String dataFolder = originalDataFolder + c_locations[i];
-                addResourceLocation( dataFolder, getMediaReadArchiveType(), "General" );
+                addResourceLocation(dataFolder, getMediaReadArchiveType(), "General");
             }
         }
 
     public:
-        PostprocessingGraphicsSystem( GameState *gameState ) :
-            GraphicsSystem( gameState )
+        PostprocessingGraphicsSystem(GameState* gameState) :
+            GraphicsSystem(gameState)
         {
         }
     };
 
-    void MainEntryPoints::createSystems( GameState **outGraphicsGameState,
-                                         GraphicsSystem **outGraphicsSystem,
-                                         GameState **outLogicGameState,
-                                         LogicSystem **outLogicSystem )
+    void MainEntryPoints::createSystems(GameState** outGraphicsGameState, GraphicsSystem** outGraphicsSystem)
     {
-        PostprocessingGameState *gfxGameState = new PostprocessingGameState(
-        "This sample depends on the media files:\n"
-        "   * Samples/Media/2.0/materials/Common/*.*\n"
-        "   * Samples/Media/2.0/materials/Postprocessing/*.*\n"
-        "   * Samples/Media/2.0/scripts/materials/TutorialSky_Postprocess/*.*\n"
-        "   * Samples/Media/packs/cubemapsJS.zip\n" );
+        PostprocessingGameState* gfxGameState = new PostprocessingGameState("");
+        GraphicsSystem* graphicsSystem = new PostprocessingGraphicsSystem(gfxGameState);
 
-        GraphicsSystem *graphicsSystem = new PostprocessingGraphicsSystem( gfxGameState );
-
-        gfxGameState->_notifyGraphicsSystem( graphicsSystem );
+        gfxGameState->_notifyGraphicsSystem(graphicsSystem);
 
         *outGraphicsGameState = gfxGameState;
         *outGraphicsSystem = graphicsSystem;
     }
 
-    void MainEntryPoints::destroySystems( GameState *graphicsGameState,
-                                          GraphicsSystem *graphicsSystem,
-                                          GameState *logicGameState,
-                                          LogicSystem *logicSystem )
+    void MainEntryPoints::destroySystems(GameState* graphicsGameState, GraphicsSystem* graphicsSystem)
     {
         delete graphicsSystem;
         delete graphicsGameState;

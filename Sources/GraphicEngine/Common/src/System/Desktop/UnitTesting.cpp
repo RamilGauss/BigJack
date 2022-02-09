@@ -531,203 +531,203 @@ namespace Demo
     //-------------------------------------------------------------------------
     int UnitTest::runLoop( Ogre::String outputFolder )
     {
-        if( outputFolder.empty() )
-            outputFolder = "./";
-        else if( outputFolder[outputFolder.size() - 1u] != '/' )
-            outputFolder += "/";
+        //if( outputFolder.empty() )
+        //    outputFolder = "./";
+        //else if( outputFolder[outputFolder.size() - 1u] != '/' )
+        //    outputFolder += "/";
 
-        GameState *graphicsGameState = 0;
-        GraphicsSystem *graphicsSystem = 0;
-        GameState *logicGameState = 0;
-        LogicSystem *logicSystem = 0;
+        //GameState *graphicsGameState = 0;
+        //GraphicsSystem *graphicsSystem = 0;
+        //GameState *logicGameState = 0;
+        //LogicSystem *logicSystem = 0;
 
-        MainEntryPoints::createSystems( &graphicsGameState, &graphicsSystem, &logicGameState,
-                                        &logicSystem );
+        //MainEntryPoints::createSystems( &graphicsGameState, &graphicsSystem, &logicGameState,
+        //                                &logicSystem );
 
-        try
-        {
-            graphicsSystem->setAlwaysAskForConfig( false );
-            graphicsSystem->initialize( Demo::MainEntryPoints::getWindowTitle() );
-            if( logicSystem )
-                logicSystem->initialize();
+        //try
+        //{
+        //    graphicsSystem->setAlwaysAskForConfig( false );
+        //    graphicsSystem->initialize( Demo::MainEntryPoints::getWindowTitle() );
+        //    if( logicSystem )
+        //        logicSystem->initialize();
 
-            if( graphicsSystem->getQuit() )
-            {
-                if( logicSystem )
-                    logicSystem->deinitialize();
-                graphicsSystem->deinitialize();
+        //    if( graphicsSystem->getQuit() )
+        //    {
+        //        if( logicSystem )
+        //            logicSystem->deinitialize();
+        //        graphicsSystem->deinitialize();
 
-                MainEntryPoints::destroySystems( graphicsGameState, graphicsSystem, logicGameState,
-                                                 logicSystem );
+        //        MainEntryPoints::destroySystems( graphicsGameState, graphicsSystem, logicGameState,
+        //                                         logicSystem );
 
-                return 0;  // User cancelled config
-            }
+        //        return 0;  // User cancelled config
+        //    }
 
-            Ogre::Window *renderWindow = graphicsSystem->getRenderWindow();
+        //    Ogre::Window *renderWindow = graphicsSystem->getRenderWindow();
 
-            graphicsSystem->createScene01();
-            if( logicSystem )
-                logicSystem->createScene01();
+        //    graphicsSystem->createScene01();
+        //    if( logicSystem )
+        //        logicSystem->createScene01();
 
-            graphicsSystem->createScene02();
-            if( logicSystem )
-                logicSystem->createScene02();
+        //    graphicsSystem->createScene02();
+        //    if( logicSystem )
+        //        logicSystem->createScene02();
 
-            SdlInputHandler *inputHandler = graphicsSystem->getInputHandler();
-            mRealKeyboardListener = inputHandler->getKeyboardListener();
-            mRealMouseListener = inputHandler->getMouseListener();
-            inputHandler->_overrideKeyboardListener( this );
-            inputHandler->_overrideMouseListener( this );
+        //    SdlInputHandler *inputHandler = graphicsSystem->getInputHandler();
+        //    mRealKeyboardListener = inputHandler->getKeyboardListener();
+        //    mRealMouseListener = inputHandler->getMouseListener();
+        //    inputHandler->_overrideKeyboardListener( this );
+        //    inputHandler->_overrideMouseListener( this );
 
-            const size_t numFrames = mNumFrames;
-            MainEntryPoints::SetFrametime(mFrametime);
+        //    const size_t numFrames = mNumFrames;
+        //    MainEntryPoints::SetFrametime(mFrametime);
 
-            Ogre::Root *root = graphicsSystem->getRoot();
-            Ogre::TextureGpuManager *textureManager = root->getRenderSystem()->getTextureGpuManager();
+        //    Ogre::Root *root = graphicsSystem->getRoot();
+        //    Ogre::TextureGpuManager *textureManager = root->getRenderSystem()->getTextureGpuManager();
 
-            mBlockInputForwarding = true;
+        //    mBlockInputForwarding = true;
 
-            std::vector<FrameActivity>::const_iterator frameActivity = mFrameActivity.begin();
+        //    std::vector<FrameActivity>::const_iterator frameActivity = mFrameActivity.begin();
 
-            for( size_t frameIdx = 0u; frameIdx < numFrames; ++frameIdx )
-            {
-                mFrameIdx = static_cast<uint32_t>( frameIdx );
+        //    for( size_t frameIdx = 0u; frameIdx < numFrames; ++frameIdx )
+        //    {
+        //        mFrameIdx = static_cast<uint32_t>( frameIdx );
 
-                if( frameActivity != mFrameActivity.end() && frameIdx == frameActivity->frameId )
-                {
-                    Ogre::Camera *camera = graphicsSystem->getCamera();
+        //        if( frameActivity != mFrameActivity.end() && frameIdx == frameActivity->frameId )
+        //        {
+        //            Ogre::Camera *camera = graphicsSystem->getCamera();
 
-                    // Camera may be attached to a node, which is why we call it twice.
-                    // We need to ensure the derived position is respected
-                    camera->setPosition( frameActivity->cameraPos );
-                    camera->setPosition( frameActivity->cameraPos + frameActivity->cameraPos -
-                                         camera->getRealPosition() );
+        //            // Camera may be attached to a node, which is why we call it twice.
+        //            // We need to ensure the derived position is respected
+        //            camera->setPosition( frameActivity->cameraPos );
+        //            camera->setPosition( frameActivity->cameraPos + frameActivity->cameraPos -
+        //                                 camera->getRealPosition() );
 
-                    camera->setOrientation( camera->getParentNode()->_getDerivedOrientation().Inverse() *
-                                            frameActivity->cameraRot );
-                }
+        //            camera->setOrientation( camera->getParentNode()->_getDerivedOrientation().Inverse() *
+        //                                    frameActivity->cameraRot );
+        //        }
 
-                if( logicSystem )
-                {
-                    logicSystem->beginFrameParallel();
-                    logicSystem->update( static_cast<float>( MainEntryPoints::Frametime() ) );
-                    logicSystem->finishFrameParallel();
+        //        if( logicSystem )
+        //        {
+        //            logicSystem->beginFrameParallel();
+        //            logicSystem->update( static_cast<float>( MainEntryPoints::Frametime() ) );
+        //            logicSystem->finishFrameParallel();
 
-                    logicSystem->finishFrame();
-                    graphicsSystem->finishFrame();
-                }
+        //            logicSystem->finishFrame();
+        //            graphicsSystem->finishFrame();
+        //        }
 
-                const Ogre::FrameStats *frameStats = root->getFrameStats();
-                // A bit hacky to const_cast, but we're intentionally tampering something we shouldn't
-                // in order to force deterministic output
-                Ogre::FrameStats *frameStatsNonConst = const_cast<Ogre::FrameStats *>( frameStats );
-                frameStatsNonConst->reset( 0 );
+        //        const Ogre::FrameStats *frameStats = root->getFrameStats();
+        //        // A bit hacky to const_cast, but we're intentionally tampering something we shouldn't
+        //        // in order to force deterministic output
+        //        Ogre::FrameStats *frameStatsNonConst = const_cast<Ogre::FrameStats *>( frameStats );
+        //        frameStatsNonConst->reset( 0 );
 
-                graphicsSystem->beginFrameParallel();
-                if( frameActivity != mFrameActivity.end() && frameIdx == frameActivity->frameId )
-                {
-                    SDL_Event evt;
-                    memset( &evt, 0, sizeof( evt ) );
+        //        graphicsSystem->beginFrameParallel();
+        //        if( frameActivity != mFrameActivity.end() && frameIdx == frameActivity->frameId )
+        //        {
+        //            SDL_Event evt;
+        //            memset( &evt, 0, sizeof( evt ) );
 
-                    mBlockInputForwarding = false;
-                    std::vector<KeyStroke>::const_iterator itor = frameActivity->keyStrokes.begin();
-                    std::vector<KeyStroke>::const_iterator endt = frameActivity->keyStrokes.end();
+        //            mBlockInputForwarding = false;
+        //            std::vector<KeyStroke>::const_iterator itor = frameActivity->keyStrokes.begin();
+        //            std::vector<KeyStroke>::const_iterator endt = frameActivity->keyStrokes.end();
 
-                    while( itor != endt )
-                    {
-                        if( !itor->bReleased )
-                            evt.type = SDL_KEYDOWN;
-                        else
-                            evt.type = SDL_KEYUP;
-                        evt.key.keysym.sym = itor->keycode;
-                        evt.key.keysym.scancode = static_cast<SDL_Scancode>( itor->scancode );
-                        inputHandler->_handleSdlEvents( evt );
-                        ++itor;
-                    }
-                    mBlockInputForwarding = true;
-                }
-                graphicsSystem->update( static_cast<float>( MainEntryPoints::Frametime() ) );
-                graphicsSystem->finishFrameParallel();
-                if( !logicSystem )
-                    graphicsSystem->finishFrame();
+        //            while( itor != endt )
+        //            {
+        //                if( !itor->bReleased )
+        //                    evt.type = SDL_KEYDOWN;
+        //                else
+        //                    evt.type = SDL_KEYUP;
+        //                evt.key.keysym.sym = itor->keycode;
+        //                evt.key.keysym.scancode = static_cast<SDL_Scancode>( itor->scancode );
+        //                inputHandler->_handleSdlEvents( evt );
+        //                ++itor;
+        //            }
+        //            mBlockInputForwarding = true;
+        //        }
+        //        graphicsSystem->update( static_cast<float>( MainEntryPoints::Frametime() ) );
+        //        graphicsSystem->finishFrameParallel();
+        //        if( !logicSystem )
+        //            graphicsSystem->finishFrame();
 
-                if( !renderWindow->isVisible() )
-                    renderWindow->setFocused( true );
+        //        if( !renderWindow->isVisible() )
+        //            renderWindow->setFocused( true );
 
-                // We must do this to ensure determinism, though it may mean
-                // we miss some coverage due to race conditions
-                textureManager->waitForStreamingCompletion();
+        //        // We must do this to ensure determinism, though it may mean
+        //        // we miss some coverage due to race conditions
+        //        textureManager->waitForStreamingCompletion();
 
-                if( frameActivity != mFrameActivity.end() && frameIdx == frameActivity->frameId )
-                {
-                    if( !mParams.bSkipDump )
-                    {
-                        const Ogre::String frameIdxStr( Ogre::StringConverter::toString( frameIdx ) +
-                                                        "_" );
-                        if( frameActivity->screenshotRenderWindow )
-                        {
-                            Ogre::Image2 img;
-                            Ogre::TextureGpu *texture;
+        //        if( frameActivity != mFrameActivity.end() && frameIdx == frameActivity->frameId )
+        //        {
+        //            if( !mParams.bSkipDump )
+        //            {
+        //                const Ogre::String frameIdxStr( Ogre::StringConverter::toString( frameIdx ) +
+        //                                                "_" );
+        //                if( frameActivity->screenshotRenderWindow )
+        //                {
+        //                    Ogre::Image2 img;
+        //                    Ogre::TextureGpu *texture;
 
-                            texture = renderWindow->getTexture();
-                            img.convertFromTexture( texture, 0u, texture->getNumMipmaps() - 1u );
-                            img.save( outputFolder + frameIdxStr + "RenderWindow_colour.png", 0u,
-                                      texture->getNumMipmaps() );
+        //                    texture = renderWindow->getTexture();
+        //                    img.convertFromTexture( texture, 0u, texture->getNumMipmaps() - 1u );
+        //                    img.save( outputFolder + frameIdxStr + "RenderWindow_colour.png", 0u,
+        //                              texture->getNumMipmaps() );
 
-                            texture = renderWindow->getDepthBuffer();
-                            img.convertFromTexture( texture, 0u, texture->getNumMipmaps() - 1u );
-                            img.save( outputFolder + frameIdxStr + "RenderWindow_depth.exr", 0u,
-                                      texture->getNumMipmaps() );
-                        }
+        //                    texture = renderWindow->getDepthBuffer();
+        //                    img.convertFromTexture( texture, 0u, texture->getNumMipmaps() - 1u );
+        //                    img.save( outputFolder + frameIdxStr + "RenderWindow_depth.exr", 0u,
+        //                              texture->getNumMipmaps() );
+        //                }
 
-                        Ogre::StringVector::const_iterator itor =
-                            frameActivity->targetsToScreenshot.begin();
-                        Ogre::StringVector::const_iterator endt =
-                            frameActivity->targetsToScreenshot.end();
+        //                Ogre::StringVector::const_iterator itor =
+        //                    frameActivity->targetsToScreenshot.begin();
+        //                Ogre::StringVector::const_iterator endt =
+        //                    frameActivity->targetsToScreenshot.end();
 
-                        while( itor != endt )
-                        {
-                            Ogre::TextureGpu *texture = textureManager->findTextureNoThrow( *itor );
-                            if( !texture )
-                            {
-                                OGRE_EXCEPT( Ogre::Exception::ERR_ITEM_NOT_FOUND, "UnitTest::runLoop",
-                                             "Could not find texture " + *itor );
-                            }
+        //                while( itor != endt )
+        //                {
+        //                    Ogre::TextureGpu *texture = textureManager->findTextureNoThrow( *itor );
+        //                    if( !texture )
+        //                    {
+        //                        OGRE_EXCEPT( Ogre::Exception::ERR_ITEM_NOT_FOUND, "UnitTest::runLoop",
+        //                                     "Could not find texture " + *itor );
+        //                    }
 
-                            Ogre::Image2 img;
-                            img.convertFromTexture( texture, 0u, texture->getNumMipmaps() - 1u );
-                            img.save( outputFolder + frameIdxStr + *itor + ".oitd", 0u,
-                                      texture->getNumMipmaps() );
+        //                    Ogre::Image2 img;
+        //                    img.convertFromTexture( texture, 0u, texture->getNumMipmaps() - 1u );
+        //                    img.save( outputFolder + frameIdxStr + *itor + ".oitd", 0u,
+        //                              texture->getNumMipmaps() );
 
-                            ++itor;
-                        }
-                    }
-                    ++frameActivity;
-                }
-            }
+        //                    ++itor;
+        //                }
+        //            }
+        //            ++frameActivity;
+        //        }
+        //    }
 
-            graphicsSystem->destroyScene();
-            if( logicSystem )
-            {
-                logicSystem->destroyScene();
-                logicSystem->deinitialize();
-            }
-            graphicsSystem->deinitialize();
+        //    graphicsSystem->destroyScene();
+        //    if( logicSystem )
+        //    {
+        //        logicSystem->destroyScene();
+        //        logicSystem->deinitialize();
+        //    }
+        //    graphicsSystem->deinitialize();
 
-            MainEntryPoints::destroySystems( graphicsGameState, graphicsSystem, logicGameState,
-                                             logicSystem );
-        }
-        catch( Ogre::Exception &e )
-        {
-            MainEntryPoints::destroySystems( graphicsGameState, graphicsSystem, logicGameState,
-                                             logicSystem );
-            throw e;
-        }
-        catch( ... )
-        {
-            MainEntryPoints::destroySystems( graphicsGameState, graphicsSystem, logicGameState,
-                                             logicSystem );
-        }
+        //    MainEntryPoints::destroySystems( graphicsGameState, graphicsSystem, logicGameState,
+        //                                     logicSystem );
+        //}
+        //catch( Ogre::Exception &e )
+        //{
+        //    MainEntryPoints::destroySystems( graphicsGameState, graphicsSystem, logicGameState,
+        //                                     logicSystem );
+        //    throw e;
+        //}
+        //catch( ... )
+        //{
+        //    MainEntryPoints::destroySystems( graphicsGameState, graphicsSystem, logicGameState,
+        //                                     logicSystem );
+        //}
 
         return 0;
     }

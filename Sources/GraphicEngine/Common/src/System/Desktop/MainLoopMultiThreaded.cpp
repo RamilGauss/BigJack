@@ -60,14 +60,14 @@ struct ThreadData
     Ogre::Barrier   *barrier;
 };
 
-#if OGRE_PLATFORM == OGRE_PLATFORM_WIN32
-INT WINAPI Demo::MainEntryPoints::mainAppMultiThreaded( HINSTANCE hInst, HINSTANCE hPrevInstance,
-                                                        LPSTR strCmdLine, INT nCmdShow )
-#else
-int Demo::MainEntryPoints::mainAppMultiThreaded( int argc, const char *argv[] )
-#endif
-{
-    GameState *graphicsGameState = 0;
+//#if OGRE_PLATFORM == OGRE_PLATFORM_WIN32
+//INT WINAPI Demo::MainEntryPoints::mainAppMultiThreaded( HINSTANCE hInst, HINSTANCE hPrevInstance,
+//                                                        LPSTR strCmdLine, INT nCmdShow )
+//#else
+//int Demo::MainEntryPoints::mainAppMultiThreaded( int argc, const char *argv[] )
+//#endif
+//{
+    /*GameState *graphicsGameState = 0;
     GraphicsSystem *graphicsSystem = 0;
     GameState *logicGameState = 0;
     LogicSystem *logicSystem = 0;
@@ -91,10 +91,10 @@ int Demo::MainEntryPoints::mainAppMultiThreaded( int argc, const char *argv[] )
     Ogre::Threads::WaitForThreads( 2, threadHandles );
 
     MainEntryPoints::destroySystems( graphicsGameState, graphicsSystem,
-                                     logicGameState, logicSystem );
+                                     logicGameState, logicSystem );*/
 
-    return 0;
-}
+//    return 0;
+//}
 
 //---------------------------------------------------------------------
 unsigned long renderThreadApp( Ogre::ThreadHandle *threadHandle )

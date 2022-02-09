@@ -10,6 +10,14 @@
 	],
 	"textures" :
 	{
+		"NoiseVolume.dds/V1_Material" : 
+		{
+			"resolution" : [128, 128, 128],
+			"mipmaps" : 1,
+			"format" : "PFG_R8_UNORM",
+			"texture_type" : 7,
+			"poolId" : 0
+		},
 		"Rocks_Spec.tga" : 
 		{
 			"resolution" : [1024, 1024, 1],
@@ -72,6 +80,46 @@
 			"mipmaps" : 11,
 			"format" : "PFG_RGBA8_UNORM_SRGB",
 			"texture_type" : 3,
+			"poolId" : 0
+		},
+		"Sepia1D.tga/V1_Material" : 
+		{
+			"resolution" : [128, 1, 1],
+			"mipmaps" : 1,
+			"format" : "PFG_RGBA8_UNORM",
+			"texture_type" : 1,
+			"poolId" : 0
+		},
+		"1D_Noise.png/V1_Material" : 
+		{
+			"resolution" : [1024, 1, 1],
+			"mipmaps" : 1,
+			"format" : "PFG_RGBA8_UNORM",
+			"texture_type" : 1,
+			"poolId" : 0
+		},
+		"WaterNormal1.tga/V1_Material" : 
+		{
+			"resolution" : [256, 256, 1],
+			"mipmaps" : 1,
+			"format" : "PFG_RGBA8_UNORM",
+			"texture_type" : 3,
+			"poolId" : 0
+		},
+		"8x8PagesSplotches2.png/V1_Material" : 
+		{
+			"resolution" : [1024, 1024, 1],
+			"mipmaps" : 1,
+			"format" : "PFG_R8_UNORM",
+			"texture_type" : 3,
+			"poolId" : 0
+		},
+		"Random3D.dds/V1_Material" : 
+		{
+			"resolution" : [64, 64, 64],
+			"mipmaps" : 1,
+			"format" : "PFG_R8_UNORM",
+			"texture_type" : 7,
 			"poolId" : 0
 		}
 	}

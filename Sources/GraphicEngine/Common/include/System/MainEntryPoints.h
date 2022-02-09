@@ -1,16 +1,15 @@
 
-#ifndef _Demo_MainEntryPoints_H_
-#define _Demo_MainEntryPoints_H_
+#pragma once
 
 #include "TypeDef.h"
 
 #include "OgrePrerequisites.h"
 
 #if OGRE_PLATFORM == OGRE_PLATFORM_WIN32 || OGRE_PLATFORM == OGRE_PLATFORM_WINRT
-    #define WIN32_LEAN_AND_MEAN
-    #define VC_EXTRALEAN
-    #define NOMINMAX
-    #include <windows.h>
+#define WIN32_LEAN_AND_MEAN
+#define VC_EXTRALEAN
+#define NOMINMAX
+#include <windows.h>
 #endif
 
 namespace Demo
@@ -25,12 +24,10 @@ namespace Demo
     class DllExport MainEntryPoints
     {
     public:
-        static void createSystems( GameState **outGraphicsGameState, GraphicsSystem **outGraphicsSystem,
-                                   GameState **outLogicGameState, LogicSystem **outLogicSystem );
+        static void createSystems(GameState** outGraphicsGameState, GraphicsSystem** outGraphicsSystem);
 
         /// Destroys the systems created via createSystems. Implementation should check for null pointers.
-        static void destroySystems( GameState *graphicsGameState, GraphicsSystem *graphicsSystem,
-                                    GameState *logicGameState, LogicSystem *logicSystem );
+        static void destroySystems(GameState* graphicsGameState, GraphicsSystem* graphicsSystem);
 
         static const char* getWindowTitle(void);
 
@@ -39,20 +36,12 @@ namespace Demo
         static double Frametime();
         static void SetFrametime(double value);
 
-    #if OGRE_PLATFORM == OGRE_PLATFORM_WIN32
-        static INT WINAPI mainAppSingleThreaded( HINSTANCE hInst, HINSTANCE hPrevInstance,
-                                                 LPSTR strCmdLine, INT nCmdShow );
-    #else
-        static int mainAppSingleThreaded( int argc, const char *argv[] );
-    #endif
-    #if OGRE_PLATFORM == OGRE_PLATFORM_WIN32
-        static INT WINAPI mainAppMultiThreaded( HINSTANCE hInst, HINSTANCE hPrevInstance,
-                                                LPSTR strCmdLine, INT nCmdShow );
-    #else
-        static int mainAppMultiThreaded( int argc, const char *argv[] );
-    #endif
+#if OGRE_PLATFORM == OGRE_PLATFORM_WIN32
+        static INT WINAPI mainAppSingleThreaded(HINSTANCE hInst, HINSTANCE hPrevInstance,
+            LPSTR strCmdLine, INT nCmdShow);
+#else
+        static int mainAppSingleThreaded(int argc, const char* argv[]);
+#endif
     };
 }
-
-#endif
 

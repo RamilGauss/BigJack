@@ -1,6 +1,5 @@
 
-#ifndef _Demo_GraphicsSystem_H_
-#define _Demo_GraphicsSystem_H_
+#pragma once
 
 #include "BaseSystem.h"
 #include "GameEntityManager.h"
@@ -156,5 +155,3 @@ namespace Demo
         virtual void restartCompositor(void);
     };
 }
-
-#endif

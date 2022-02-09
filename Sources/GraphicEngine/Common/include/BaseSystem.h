@@ -1,6 +1,5 @@
 
-#ifndef _Demo_BaseSystem_H_
-#define _Demo_BaseSystem_H_
+#pragma once
 
 #include "TypeDef.h"
 #include "Threading/MessageQueueSystem.h"
@@ -32,5 +31,3 @@ namespace Demo
         void finishFrame(void);
     };
 }
-
-#endif
