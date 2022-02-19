@@ -2,25 +2,339 @@
  "graph_lock": {
   "nodes": {
    "0": {
-    "options": "sdl:directx=True\nsdl:opengl=True\nsdl:opengles=True\nsdl:sdl2main=True\nsdl:shared=True\nsdl:vulkan=True",
+    "options": "assimp:double_precision=False\nassimp:shared=False\nassimp:with_3d=True\nassimp:with_3ds=True\nassimp:with_3ds_exporter=True\nassimp:with_3mf=True\nassimp:with_3mf_exporter=True\nassimp:with_ac=True\nassimp:with_amf=True\nassimp:with_ase=True\nassimp:with_assbin=True\nassimp:with_assbin_exporter=True\nassimp:with_assjson_exporter=True\nassimp:with_assxml_exporter=True\nassimp:with_b3d=True\nassimp:with_blend=True\nassimp:with_bvh=True\nassimp:with_cob=True\nassimp:with_collada=True\nassimp:with_collada_exporter=True\nassimp:with_csm=True\nassimp:with_dxf=True\nassimp:with_fbx=True\nassimp:with_fbx_exporter=True\nassimp:with_gltf=True\nassimp:with_gltf_exporter=True\nassimp:with_hmp=True\nassimp:with_ifc=True\nassimp:with_irr=True\nassimp:with_irrmesh=True\nassimp:with_lwo=True\nassimp:with_lws=True\nassimp:with_md2=True\nassimp:with_md3=True\nassimp:with_md5=True\nassimp:with_mdc=True\nassimp:with_mdl=True\nassimp:with_mmd=True\nassimp:with_ms3d=True\nassimp:with_ndo=True\nassimp:with_nff=True\nassimp:with_obj=True\nassimp:with_obj_exporter=True\nassimp:with_off=True\nassimp:with_ogre=True\nassimp:with_opengex=True\nassimp:with_opengex_exporter=True\nassimp:with_ply=True\nassimp:with_ply_exporter=True\nassimp:with_q3bsp=True\nassimp:with_q3d=True\nassimp:with_raw=True\nassimp:with_sib=True\nassimp:with_smd=True\nassimp:with_step=True\nassimp:with_step_exporter=True\nassimp:with_stl=True\nassimp:with_stl_exporter=True\nassimp:with_terragen=True\nassimp:with_x=True\nassimp:with_x3d=True\nassimp:with_x3d_exporter=True\nassimp:with_x_exporter=True\nassimp:with_xgl=True\nbrotli:shared=False\nbullet3:bt2_thread_locks=False\nbullet3:bullet3=False\nbullet3:double_precision=False\nbullet3:extras=False\nbullet3:graphical_benchmark=False\nbullet3:network_support=False\nbullet3:shared=False\nbullet3:soft_body_multi_body_dynamics_world=False\nbzip2:build_executable=True\nbzip2:shared=False\ncorrade:build_deprecated=True\ncorrade:shared=False\ncorrade:with_interconnect=True\ncorrade:with_main=True\ncorrade:with_pluginmanager=True\ncorrade:with_testsuite=True\ncorrade:with_utility=True\neigen:MPL2_only=False\nfreetype:shared=False\nfreetype:subpixel=False\nfreetype:with_brotli=True\nfreetype:with_bzip2=True\nfreetype:with_png=True\nfreetype:with_zlib=True\nglfw:shared=False\nglfw:vulkan_static=False\nglib:shared=True\nglib:with_elf=True\nglib:with_pcre=True\nharfbuzz:shared=False\nharfbuzz:with_directwrite=False\nharfbuzz:with_freetype=True\nharfbuzz:with_gdi=True\nharfbuzz:with_glib=True\nharfbuzz:with_icu=False\nharfbuzz:with_subset=False\nharfbuzz:with_uniscribe=True\nimgui:shared=False\nirrxml:shared=False\nkuba-zip:shared=False\nlibelf:shared=False\nlibffi:shared=False\nlibgettext:shared=False\nlibgettext:threads=windows\nlibiconv:shared=False\nlibjpeg:shared=False\nlibpng:api_prefix=\nlibpng:shared=False\nlibpng:sse=True\nmagnum:al_info=True\nmagnum:any_audio_importer=True\nmagnum:any_image_converter=True\nmagnum:any_image_importer=True\nmagnum:any_scene_converter=True\nmagnum:any_scene_importer=True\nmagnum:audio=True\nmagnum:debug_tools=True\nmagnum:distance_field_converter=True\nmagnum:font_converter=True\nmagnum:gl=True\nmagnum:gl_info=True\nmagnum:glfw_application=True\nmagnum:glx_context=True\nmagnum:image_converter=True\nmagnum:magnum_font=True\nmagnum:magnum_font_converter=True\nmagnum:mesh_tools=True\nmagnum:obj_importer=True\nmagnum:primitives=True\nmagnum:scene_converter=True\nmagnum:scene_graph=True\nmagnum:sdl2_application=True\nmagnum:shaders=True\nmagnum:shared=False\nmagnum:shared_plugins=True\nmagnum:target_gl=desktop_gl\nmagnum:target_vk=True\nmagnum:text=True\nmagnum:texture_tools=True\nmagnum:tga_image_converter=True\nmagnum:tga_importer=True\nmagnum:trade=True\nmagnum:vk=True\nmagnum:wav_audio_importer=True\nmagnum:wgl_context=True\nmagnum:windowless_wgl_application=True\nmagnum-extras:application=sdl2\nmagnum-extras:player=True\nmagnum-extras:shared=False\nmagnum-extras:ui=True\nmagnum-extras:ui_gallery=True\nmagnum-integration:shared=False\nmagnum-integration:with_bullet=True\nmagnum-integration:with_dart=False\nmagnum-integration:with_eigen=True\nmagnum-integration:with_glm=True\nmagnum-integration:with_imgui=True\nmagnum-integration:with_ovr=False\nmagnum-plugins:assimp_importer=True\nmagnum-plugins:basis_imageconverter=False\nmagnum-plugins:basis_importer=False\nmagnum-plugins:dds_importer=True\nmagnum-plugins:devil_imageimporter=False\nmagnum-plugins:drflac_audioimporter=True\nmagnum-plugins:drmp3_audioimporter=True\nmagnum-plugins:drwav_audioimporter=True\nmagnum-plugins:faad2_audioimporter=False\nmagnum-plugins:freetype_font=True\nmagnum-plugins:harfbuzz_font=True\nmagnum-plugins:ico_importer=True\nmagnum-plugins:jpeg_imageconverter=True\nmagnum-plugins:jpeg_importer=True\nmagnum-plugins:meshoptimizer_sceneconverter=True\nmagnum-plugins:miniexr_imageconverter=True\nmagnum-plugins:opengex_importer=True\nmagnum-plugins:png_imageconverter=True\nmagnum-plugins:png_importer=True\nmagnum-plugins:primitive_importer=True\nmagnum-plugins:shared=True\nmagnum-plugins:shared_plugins=True\nmagnum-plugins:stanford_importer=True\nmagnum-plugins:stanford_sceneconverter=True\nmagnum-plugins:stb_imageconverter=True\nmagnum-plugins:stb_imageimporter=True\nmagnum-plugins:stbtruetype_font=True\nmagnum-plugins:stbvorbis_audioimporter=True\nmagnum-plugins:stl_importer=True\nmagnum-plugins:tinygltf_importer=True\nmeshoptimizer:shared=False\nminizip:bzip2=True\nminizip:shared=False\nminizip:tools=False\nopenal:shared=False\npcre:build_pcre_16=True\npcre:build_pcre_32=True\npcre:build_pcre_8=True\npcre:build_pcrecpp=False\npcre:build_pcregrep=True\npcre:shared=False\npcre:with_bzip2=True\npcre:with_jit=False\npcre:with_stack_for_recursion=True\npcre:with_unicode_properties=True\npcre:with_utf=True\npcre:with_zlib=True\npoly2tri:shared=False\nsdl:directx=True\nsdl:opengl=True\nsdl:opengles=True\nsdl:sdl2main=True\nsdl:shared=False\nsdl:vulkan=True\nvulkan-loader:shared=True\nzlib:shared=False",
     "requires": [
      "1",
-     "2"
+     "9",
+     "31",
+     "32"
     ],
     "path": "..\\..\\conanfile.txt",
     "context": "host"
    },
    "1": {
-    "ref": "rapidjson/1.1.0",
+    "ref": "magnum/2020.06",
+    "options": "al_info=True\nany_audio_importer=True\nany_image_converter=True\nany_image_importer=True\nany_scene_converter=True\nany_scene_importer=True\naudio=True\ndebug_tools=True\ndistance_field_converter=True\nfont_converter=True\ngl=True\ngl_info=True\nglfw_application=True\nglx_context=True\nimage_converter=True\nmagnum_font=True\nmagnum_font_converter=True\nmesh_tools=True\nobj_importer=True\nprimitives=True\nscene_converter=True\nscene_graph=True\nsdl2_application=True\nshaders=True\nshared=False\nshared_plugins=True\ntarget_gl=desktop_gl\ntarget_vk=True\ntext=True\ntexture_tools=True\ntga_image_converter=True\ntga_importer=True\ntrade=True\nvk=True\nwav_audio_importer=True\nwgl_context=True\nwindowless_wgl_application=True\ncorrade:build_deprecated=True\ncorrade:shared=False\ncorrade:with_interconnect=True\ncorrade:with_main=True\ncorrade:with_pluginmanager=True\ncorrade:with_testsuite=True\ncorrade:with_utility=True\nglfw:shared=False\nglfw:vulkan_static=False\nopenal:shared=False\nsdl:directx=True\nsdl:opengl=True\nsdl:opengles=True\nsdl:sdl2main=True\nsdl:shared=False\nsdl:vulkan=True\nvulkan-loader:shared=True",
+    "package_id": "d3db7eb2a0abec962cd4760ed3b90bef2f873438",
+    "prev": "0",
+    "requires": [
+     "2",
+     "3",
+     "4",
+     "5",
+     "7",
+     "8"
+    ],
+    "context": "host"
+   },
+   "2": {
+    "ref": "corrade/2020.06",
+    "options": "build_deprecated=True\nshared=False\nwith_interconnect=True\nwith_main=True\nwith_pluginmanager=True\nwith_testsuite=True\nwith_utility=True",
+    "package_id": "8432198254cd29d87679c4d1c809b8b4a721b962",
+    "prev": "0",
+    "context": "host"
+   },
+   "3": {
+    "ref": "openal/1.21.1",
+    "options": "shared=False",
+    "package_id": "d057732059ea44a47760900cb5e4855d2bea8714",
+    "prev": "0",
+    "context": "host"
+   },
+   "4": {
+    "ref": "opengl/system",
     "options": "",
     "package_id": "5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9",
     "prev": "0",
     "context": "host"
    },
-   "2": {
-    "ref": "sdl/2.0.18",
-    "options": "directx=True\nopengl=True\nopengles=True\nsdl2main=True\nshared=True\nvulkan=True",
-    "package_id": "7fbacd5d9c153ab2ef076669a9067213bac1a6f9",
+   "5": {
+    "ref": "vulkan-loader/1.2.190",
+    "options": "shared=True",
+    "package_id": "911dbff08788088dfd2d5b05bce9ee819fe53031",
+    "prev": "0",
+    "requires": [
+     "6"
+    ],
+    "context": "host"
+   },
+   "6": {
+    "ref": "vulkan-headers/1.2.190",
+    "options": "",
+    "package_id": "5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9",
+    "prev": "0",
+    "context": "host"
+   },
+   "7": {
+    "ref": "glfw/3.3.4",
+    "options": "shared=False\nvulkan_static=False",
+    "package_id": "72e84aac9213a09dfb0f59578ae9423a2eb326e7",
+    "prev": "0",
+    "requires": [
+     "4"
+    ],
+    "context": "host"
+   },
+   "8": {
+    "ref": "sdl/2.0.16",
+    "options": "directx=True\nopengl=True\nopengles=True\nsdl2main=True\nshared=False\nvulkan=True",
+    "package_id": "39380f4f7a6ed9bd408fbb5f7be4eb5c380f5a26",
+    "prev": "0",
+    "context": "host"
+   },
+   "9": {
+    "ref": "magnum-plugins/2020.06",
+    "options": "assimp_importer=True\nbasis_imageconverter=False\nbasis_importer=False\ndds_importer=True\ndevil_imageimporter=False\ndrflac_audioimporter=True\ndrmp3_audioimporter=True\ndrwav_audioimporter=True\nfaad2_audioimporter=False\nfreetype_font=True\nharfbuzz_font=True\nico_importer=True\njpeg_imageconverter=True\njpeg_importer=True\nmeshoptimizer_sceneconverter=True\nminiexr_imageconverter=True\nopengex_importer=True\npng_imageconverter=True\npng_importer=True\nprimitive_importer=True\nshared=True\nshared_plugins=True\nstanford_importer=True\nstanford_sceneconverter=True\nstb_imageconverter=True\nstb_imageimporter=True\nstbtruetype_font=True\nstbvorbis_audioimporter=True\nstl_importer=True\ntinygltf_importer=True\nassimp:double_precision=False\nassimp:shared=False\nassimp:with_3d=True\nassimp:with_3ds=True\nassimp:with_3ds_exporter=True\nassimp:with_3mf=True\nassimp:with_3mf_exporter=True\nassimp:with_ac=True\nassimp:with_amf=True\nassimp:with_ase=True\nassimp:with_assbin=True\nassimp:with_assbin_exporter=True\nassimp:with_assjson_exporter=True\nassimp:with_assxml_exporter=True\nassimp:with_b3d=True\nassimp:with_blend=True\nassimp:with_bvh=True\nassimp:with_cob=True\nassimp:with_collada=True\nassimp:with_collada_exporter=True\nassimp:with_csm=True\nassimp:with_dxf=True\nassimp:with_fbx=True\nassimp:with_fbx_exporter=True\nassimp:with_gltf=True\nassimp:with_gltf_exporter=True\nassimp:with_hmp=True\nassimp:with_ifc=True\nassimp:with_irr=True\nassimp:with_irrmesh=True\nassimp:with_lwo=True\nassimp:with_lws=True\nassimp:with_md2=True\nassimp:with_md3=True\nassimp:with_md5=True\nassimp:with_mdc=True\nassimp:with_mdl=True\nassimp:with_mmd=True\nassimp:with_ms3d=True\nassimp:with_ndo=True\nassimp:with_nff=True\nassimp:with_obj=True\nassimp:with_obj_exporter=True\nassimp:with_off=True\nassimp:with_ogre=True\nassimp:with_opengex=True\nassimp:with_opengex_exporter=True\nassimp:with_ply=True\nassimp:with_ply_exporter=True\nassimp:with_q3bsp=True\nassimp:with_q3d=True\nassimp:with_raw=True\nassimp:with_sib=True\nassimp:with_smd=True\nassimp:with_step=True\nassimp:with_step_exporter=True\nassimp:with_stl=True\nassimp:with_stl_exporter=True\nassimp:with_terragen=True\nassimp:with_x=True\nassimp:with_x3d=True\nassimp:with_x3d_exporter=True\nassimp:with_x_exporter=True\nassimp:with_xgl=True\nbrotli:shared=False\nbzip2:build_executable=True\nbzip2:shared=False\ncorrade:build_deprecated=True\ncorrade:shared=False\ncorrade:with_interconnect=True\ncorrade:with_main=True\ncorrade:with_pluginmanager=True\ncorrade:with_testsuite=True\ncorrade:with_utility=True\nfreetype:shared=False\nfreetype:subpixel=False\nfreetype:with_brotli=True\nfreetype:with_bzip2=True\nfreetype:with_png=True\nfreetype:with_zlib=True\nglfw:shared=False\nglfw:vulkan_static=False\nglib:shared=True\nglib:with_elf=True\nglib:with_pcre=True\nharfbuzz:shared=False\nharfbuzz:with_directwrite=False\nharfbuzz:with_freetype=True\nharfbuzz:with_gdi=True\nharfbuzz:with_glib=True\nharfbuzz:with_icu=False\nharfbuzz:with_subset=False\nharfbuzz:with_uniscribe=True\nirrxml:shared=False\nkuba-zip:shared=False\nlibelf:shared=False\nlibffi:shared=False\nlibgettext:shared=False\nlibgettext:threads=windows\nlibiconv:shared=False\nlibjpeg:shared=False\nlibpng:api_prefix=\nlibpng:shared=False\nlibpng:sse=True\nmagnum:al_info=True\nmagnum:any_audio_importer=True\nmagnum:any_image_converter=True\nmagnum:any_image_importer=True\nmagnum:any_scene_converter=True\nmagnum:any_scene_importer=True\nmagnum:audio=True\nmagnum:debug_tools=True\nmagnum:distance_field_converter=True\nmagnum:font_converter=True\nmagnum:gl=True\nmagnum:gl_info=True\nmagnum:glfw_application=True\nmagnum:glx_context=True\nmagnum:image_converter=True\nmagnum:magnum_font=True\nmagnum:magnum_font_converter=True\nmagnum:mesh_tools=True\nmagnum:obj_importer=True\nmagnum:primitives=True\nmagnum:scene_converter=True\nmagnum:scene_graph=True\nmagnum:sdl2_application=True\nmagnum:shaders=True\nmagnum:shared=False\nmagnum:shared_plugins=True\nmagnum:target_gl=desktop_gl\nmagnum:target_vk=True\nmagnum:text=True\nmagnum:texture_tools=True\nmagnum:tga_image_converter=True\nmagnum:tga_importer=True\nmagnum:trade=True\nmagnum:vk=True\nmagnum:wav_audio_importer=True\nmagnum:wgl_context=True\nmagnum:windowless_wgl_application=True\nmeshoptimizer:shared=False\nminizip:bzip2=True\nminizip:shared=False\nminizip:tools=False\nopenal:shared=False\npcre:build_pcre_16=True\npcre:build_pcre_32=True\npcre:build_pcre_8=True\npcre:build_pcrecpp=False\npcre:build_pcregrep=True\npcre:shared=False\npcre:with_bzip2=True\npcre:with_jit=False\npcre:with_stack_for_recursion=True\npcre:with_unicode_properties=True\npcre:with_utf=True\npcre:with_zlib=True\npoly2tri:shared=False\nsdl:directx=True\nsdl:opengl=True\nsdl:opengles=True\nsdl:sdl2main=True\nsdl:shared=False\nsdl:vulkan=True\nvulkan-loader:shared=True\nzlib:shared=False",
+    "package_id": "b6b05c4175961c485a8935a65639d407c6b3c5fb",
+    "prev": "0",
+    "requires": [
+     "1",
+     "10",
+     "19",
+     "20",
+     "29",
+     "30",
+     "21"
+    ],
+    "context": "host"
+   },
+   "10": {
+    "ref": "assimp/5.0.1",
+    "options": "double_precision=False\nshared=False\nwith_3d=True\nwith_3ds=True\nwith_3ds_exporter=True\nwith_3mf=True\nwith_3mf_exporter=True\nwith_ac=True\nwith_amf=True\nwith_ase=True\nwith_assbin=True\nwith_assbin_exporter=True\nwith_assjson_exporter=True\nwith_assxml_exporter=True\nwith_b3d=True\nwith_blend=True\nwith_bvh=True\nwith_cob=True\nwith_collada=True\nwith_collada_exporter=True\nwith_csm=True\nwith_dxf=True\nwith_fbx=True\nwith_fbx_exporter=True\nwith_gltf=True\nwith_gltf_exporter=True\nwith_hmp=True\nwith_ifc=True\nwith_irr=True\nwith_irrmesh=True\nwith_lwo=True\nwith_lws=True\nwith_md2=True\nwith_md3=True\nwith_md5=True\nwith_mdc=True\nwith_mdl=True\nwith_mmd=True\nwith_ms3d=True\nwith_ndo=True\nwith_nff=True\nwith_obj=True\nwith_obj_exporter=True\nwith_off=True\nwith_ogre=True\nwith_opengex=True\nwith_opengex_exporter=True\nwith_ply=True\nwith_ply_exporter=True\nwith_q3bsp=True\nwith_q3d=True\nwith_raw=True\nwith_sib=True\nwith_smd=True\nwith_step=True\nwith_step_exporter=True\nwith_stl=True\nwith_stl_exporter=True\nwith_terragen=True\nwith_x=True\nwith_x3d=True\nwith_x3d_exporter=True\nwith_x_exporter=True\nwith_xgl=True\nbzip2:build_executable=True\nbzip2:shared=False\nirrxml:shared=False\nkuba-zip:shared=False\nminizip:bzip2=True\nminizip:shared=False\nminizip:tools=False\npoly2tri:shared=False\nzlib:shared=False",
+    "package_id": "1648e416a0e3a534906c5f09981ec4a1485ea36e",
+    "prev": "0",
+    "requires": [
+     "11",
+     "12",
+     "15",
+     "16",
+     "17",
+     "18",
+     "13"
+    ],
+    "context": "host"
+   },
+   "11": {
+    "ref": "irrxml/1.2",
+    "options": "shared=False",
+    "package_id": "d057732059ea44a47760900cb5e4855d2bea8714",
+    "prev": "0",
+    "context": "host"
+   },
+   "12": {
+    "ref": "minizip/1.2.11",
+    "options": "bzip2=True\nshared=False\ntools=False\nbzip2:build_executable=True\nbzip2:shared=False\nzlib:shared=False",
+    "package_id": "4ec3e0d3e5a8e683cb479ce58a7909ee9fc23654",
+    "prev": "0",
+    "requires": [
+     "13",
+     "14"
+    ],
+    "context": "host"
+   },
+   "13": {
+    "ref": "zlib/1.2.11",
+    "options": "shared=False",
+    "package_id": "d057732059ea44a47760900cb5e4855d2bea8714",
+    "prev": "0",
+    "context": "host"
+   },
+   "14": {
+    "ref": "bzip2/1.0.8",
+    "options": "build_executable=True\nshared=False",
+    "package_id": "589a23dff5fdb23a7fb851223eb766480ead0a9a",
+    "prev": "0",
+    "context": "host"
+   },
+   "15": {
+    "ref": "utfcpp/3.1.2",
+    "options": "",
+    "package_id": "5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9",
+    "prev": "0",
+    "context": "host"
+   },
+   "16": {
+    "ref": "kuba-zip/0.1.31",
+    "options": "shared=False",
+    "package_id": "d057732059ea44a47760900cb5e4855d2bea8714",
+    "prev": "0",
+    "context": "host"
+   },
+   "17": {
+    "ref": "poly2tri/cci.20130502",
+    "options": "shared=False",
+    "package_id": "d057732059ea44a47760900cb5e4855d2bea8714",
+    "prev": "0",
+    "context": "host"
+   },
+   "18": {
+    "ref": "rapidjson/cci.20200410",
+    "options": "",
+    "package_id": "5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9",
+    "prev": "0",
+    "context": "host"
+   },
+   "19": {
+    "ref": "harfbuzz/2.8.2",
+    "options": "shared=False\nwith_directwrite=False\nwith_freetype=True\nwith_gdi=True\nwith_glib=True\nwith_icu=False\nwith_subset=False\nwith_uniscribe=True\nbrotli:shared=False\nbzip2:build_executable=True\nbzip2:shared=False\nfreetype:shared=False\nfreetype:subpixel=False\nfreetype:with_brotli=True\nfreetype:with_bzip2=True\nfreetype:with_png=True\nfreetype:with_zlib=True\nglib:shared=True\nglib:with_elf=True\nglib:with_pcre=True\nlibelf:shared=False\nlibffi:shared=False\nlibgettext:shared=False\nlibgettext:threads=windows\nlibiconv:shared=False\nlibpng:api_prefix=\nlibpng:shared=False\nlibpng:sse=True\npcre:build_pcre_16=True\npcre:build_pcre_32=True\npcre:build_pcre_8=True\npcre:build_pcrecpp=False\npcre:build_pcregrep=True\npcre:shared=False\npcre:with_bzip2=True\npcre:with_jit=False\npcre:with_stack_for_recursion=True\npcre:with_unicode_properties=True\npcre:with_utf=True\npcre:with_zlib=True\nzlib:shared=False",
+    "package_id": "b3e4e64caf5e5fb282fb6697dad12bd1f7d68ede",
+    "prev": "0",
+    "requires": [
+     "20",
+     "23"
+    ],
+    "context": "host"
+   },
+   "20": {
+    "ref": "freetype/2.11.0",
+    "options": "shared=False\nsubpixel=False\nwith_brotli=True\nwith_bzip2=True\nwith_png=True\nwith_zlib=True\nbrotli:shared=False\nbzip2:build_executable=True\nbzip2:shared=False\nlibpng:api_prefix=\nlibpng:shared=False\nlibpng:sse=True\nzlib:shared=False",
+    "package_id": "c69bad48274e7fc45c887cddc32aa0459f0a81e0",
+    "prev": "0",
+    "requires": [
+     "21",
+     "13",
+     "14",
+     "22"
+    ],
+    "context": "host"
+   },
+   "21": {
+    "ref": "libpng/1.6.37",
+    "options": "api_prefix=\nshared=False\nsse=True\nzlib:shared=False",
+    "package_id": "8b1ef0ec9599374db4689199730c00a0d5f4de36",
+    "prev": "0",
+    "requires": [
+     "13"
+    ],
+    "context": "host"
+   },
+   "22": {
+    "ref": "brotli/1.0.9",
+    "options": "shared=False",
+    "package_id": "d057732059ea44a47760900cb5e4855d2bea8714",
+    "prev": "0",
+    "context": "host"
+   },
+   "23": {
+    "ref": "glib/2.70.1",
+    "options": "shared=True\nwith_elf=True\nwith_pcre=True\nbzip2:build_executable=True\nbzip2:shared=False\nlibelf:shared=False\nlibffi:shared=False\nlibgettext:shared=False\nlibgettext:threads=windows\nlibiconv:shared=False\npcre:build_pcre_16=True\npcre:build_pcre_32=True\npcre:build_pcre_8=True\npcre:build_pcrecpp=False\npcre:build_pcregrep=True\npcre:shared=False\npcre:with_bzip2=True\npcre:with_jit=False\npcre:with_stack_for_recursion=True\npcre:with_unicode_properties=True\npcre:with_utf=True\npcre:with_zlib=True\nzlib:shared=False",
+    "package_id": "4069533a4af0486bece1b50f713667d4cea610e4",
+    "prev": "0",
+    "requires": [
+     "13",
+     "24",
+     "25",
+     "26",
+     "27"
+    ],
+    "context": "host"
+   },
+   "24": {
+    "ref": "libffi/3.4.2",
+    "options": "shared=False",
+    "package_id": "d057732059ea44a47760900cb5e4855d2bea8714",
+    "prev": "0",
+    "context": "host"
+   },
+   "25": {
+    "ref": "pcre/8.45",
+    "options": "build_pcre_16=True\nbuild_pcre_32=True\nbuild_pcre_8=True\nbuild_pcrecpp=False\nbuild_pcregrep=True\nshared=False\nwith_bzip2=True\nwith_jit=False\nwith_stack_for_recursion=True\nwith_unicode_properties=True\nwith_utf=True\nwith_zlib=True\nbzip2:build_executable=True\nbzip2:shared=False\nzlib:shared=False",
+    "package_id": "7a162084f5550c625a8950e9b1175d1474d2fbab",
+    "prev": "0",
+    "requires": [
+     "14",
+     "13"
+    ],
+    "context": "host"
+   },
+   "26": {
+    "ref": "libelf/0.8.13",
+    "options": "shared=False",
+    "package_id": "d057732059ea44a47760900cb5e4855d2bea8714",
+    "prev": "0",
+    "context": "host"
+   },
+   "27": {
+    "ref": "libgettext/0.20.1",
+    "options": "shared=False\nthreads=windows\nlibiconv:shared=False",
+    "package_id": "e0c22822cdf05b624135e1696ae5cb784a23aeb3",
+    "prev": "0",
+    "requires": [
+     "28"
+    ],
+    "context": "host"
+   },
+   "28": {
+    "ref": "libiconv/1.16",
+    "options": "shared=False",
+    "package_id": "d057732059ea44a47760900cb5e4855d2bea8714",
+    "prev": "0",
+    "context": "host"
+   },
+   "29": {
+    "ref": "libjpeg/9d",
+    "options": "shared=False",
+    "package_id": "d057732059ea44a47760900cb5e4855d2bea8714",
+    "prev": "0",
+    "context": "host"
+   },
+   "30": {
+    "ref": "meshoptimizer/0.15",
+    "options": "shared=False",
+    "package_id": "d057732059ea44a47760900cb5e4855d2bea8714",
+    "prev": "0",
+    "context": "host"
+   },
+   "31": {
+    "ref": "magnum-extras/2020.06",
+    "options": "application=sdl2\nplayer=True\nshared=False\nui=True\nui_gallery=True\ncorrade:build_deprecated=True\ncorrade:shared=False\ncorrade:with_interconnect=True\ncorrade:with_main=True\ncorrade:with_pluginmanager=True\ncorrade:with_testsuite=True\ncorrade:with_utility=True\nglfw:shared=False\nglfw:vulkan_static=False\nmagnum:al_info=True\nmagnum:any_audio_importer=True\nmagnum:any_image_converter=True\nmagnum:any_image_importer=True\nmagnum:any_scene_converter=True\nmagnum:any_scene_importer=True\nmagnum:audio=True\nmagnum:debug_tools=True\nmagnum:distance_field_converter=True\nmagnum:font_converter=True\nmagnum:gl=True\nmagnum:gl_info=True\nmagnum:glfw_application=True\nmagnum:glx_context=True\nmagnum:image_converter=True\nmagnum:magnum_font=True\nmagnum:magnum_font_converter=True\nmagnum:mesh_tools=True\nmagnum:obj_importer=True\nmagnum:primitives=True\nmagnum:scene_converter=True\nmagnum:scene_graph=True\nmagnum:sdl2_application=True\nmagnum:shaders=True\nmagnum:shared=False\nmagnum:shared_plugins=True\nmagnum:target_gl=desktop_gl\nmagnum:target_vk=True\nmagnum:text=True\nmagnum:texture_tools=True\nmagnum:tga_image_converter=True\nmagnum:tga_importer=True\nmagnum:trade=True\nmagnum:vk=True\nmagnum:wav_audio_importer=True\nmagnum:wgl_context=True\nmagnum:windowless_wgl_application=True\nopenal:shared=False\nsdl:directx=True\nsdl:opengl=True\nsdl:opengles=True\nsdl:sdl2main=True\nsdl:shared=False\nsdl:vulkan=True\nvulkan-loader:shared=True",
+    "package_id": "053e827c5434aab6bd221d6831e12ee048b5fc28",
+    "prev": "0",
+    "requires": [
+     "1",
+     "2"
+    ],
+    "context": "host"
+   },
+   "32": {
+    "ref": "magnum-integration/2020.06",
+    "options": "shared=False\nwith_bullet=True\nwith_dart=False\nwith_eigen=True\nwith_glm=True\nwith_imgui=True\nwith_ovr=False\nbullet3:bt2_thread_locks=False\nbullet3:bullet3=False\nbullet3:double_precision=False\nbullet3:extras=False\nbullet3:graphical_benchmark=False\nbullet3:network_support=False\nbullet3:shared=False\nbullet3:soft_body_multi_body_dynamics_world=False\ncorrade:build_deprecated=True\ncorrade:shared=False\ncorrade:with_interconnect=True\ncorrade:with_main=True\ncorrade:with_pluginmanager=True\ncorrade:with_testsuite=True\ncorrade:with_utility=True\neigen:MPL2_only=False\nglfw:shared=False\nglfw:vulkan_static=False\nimgui:shared=False\nmagnum:al_info=True\nmagnum:any_audio_importer=True\nmagnum:any_image_converter=True\nmagnum:any_image_importer=True\nmagnum:any_scene_converter=True\nmagnum:any_scene_importer=True\nmagnum:audio=True\nmagnum:debug_tools=True\nmagnum:distance_field_converter=True\nmagnum:font_converter=True\nmagnum:gl=True\nmagnum:gl_info=True\nmagnum:glfw_application=True\nmagnum:glx_context=True\nmagnum:image_converter=True\nmagnum:magnum_font=True\nmagnum:magnum_font_converter=True\nmagnum:mesh_tools=True\nmagnum:obj_importer=True\nmagnum:primitives=True\nmagnum:scene_converter=True\nmagnum:scene_graph=True\nmagnum:sdl2_application=True\nmagnum:shaders=True\nmagnum:shared=False\nmagnum:shared_plugins=True\nmagnum:target_gl=desktop_gl\nmagnum:target_vk=True\nmagnum:text=True\nmagnum:texture_tools=True\nmagnum:tga_image_converter=True\nmagnum:tga_importer=True\nmagnum:trade=True\nmagnum:vk=True\nmagnum:wav_audio_importer=True\nmagnum:wgl_context=True\nmagnum:windowless_wgl_application=True\nopenal:shared=False\nsdl:directx=True\nsdl:opengl=True\nsdl:opengles=True\nsdl:sdl2main=True\nsdl:shared=False\nsdl:vulkan=True\nvulkan-loader:shared=True",
+    "package_id": "8e927a2e87c93e6542a87bf93b1e52da9013eb40",
+    "prev": "0",
+    "requires": [
+     "1",
+     "33",
+     "34",
+     "35",
+     "36"
+    ],
+    "context": "host"
+   },
+   "33": {
+    "ref": "bullet3/3.17",
+    "options": "bt2_thread_locks=False\nbullet3=False\ndouble_precision=False\nextras=False\ngraphical_benchmark=False\nnetwork_support=False\nshared=False\nsoft_body_multi_body_dynamics_world=False",
+    "package_id": "d057732059ea44a47760900cb5e4855d2bea8714",
+    "prev": "0",
+    "context": "host"
+   },
+   "34": {
+    "ref": "eigen/3.4.0",
+    "options": "MPL2_only=False",
+    "package_id": "5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9",
+    "prev": "0",
+    "context": "host"
+   },
+   "35": {
+    "ref": "glm/0.9.9.8",
+    "options": "",
+    "package_id": "5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9",
+    "prev": "0",
+    "context": "host"
+   },
+   "36": {
+    "ref": "imgui/1.84.2",
+    "options": "shared=False",
+    "package_id": "d057732059ea44a47760900cb5e4855d2bea8714",
     "prev": "0",
     "context": "host"
    }

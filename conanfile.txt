@@ -1,10 +1,12 @@
 [requires]
-    rapidjson/1.1.0
-    sdl/2.0.18
+	magnum/2020.06
+	magnum-plugins/2020.06
+	magnum-extras/2020.06
+	magnum-integration/2020.06
 
 [options]
-    sdl:shared=True
-    
+	magnum-plugins:shared=True
+
 [imports]
     bin, *.dll -> ../../Exe
     lib, *.lib -> ../../Lib

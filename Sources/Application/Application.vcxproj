@@ -122,14 +122,14 @@
       <PreprocessorDefinitions>_DEBUG;_WIN32;__WIN32__;WIN32;_WINDOWS;_MBCS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>Default</LanguageStandard>
-      <AdditionalIncludeDirectories>$(SolutionDir)Sources/GraphicEngine;$(SolutionDir)Sources/GraphicEngine/Common/include;$(SolutionDir)Dependencies/Include;$(SolutionDir)Dependencies/Include/OGRE;$(SolutionDir)Dependencies/Include/OGRE/Overlay;$(SolutionDir)Dependencies/Include/OGRE/Threading;$(SolutionDir)Dependencies/Include/OGRE/Hlms/Common;$(SolutionDir)Dependencies/Include/OGRE/Hlms/Pbs;$(SolutionDir)Dependencies/Include/OGRE/Hlms/Unlit;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Sources/GraphicEngine;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AdditionalOptions>/Zm256 /bigobj</AdditionalOptions>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>$(SolutionDir)Dependencies/Lib;$(SolutionDir)Lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>OgreOverlay_d.lib;OgreHlmsPbs_d.lib;OgreHlmsUnlit_d.lib;OgreMain_d.lib;GraphicEngine_d.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)Lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>GraphicEngine_d.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <ProjectReference>
       <LinkLibraryDependencies>false</LinkLibraryDependencies>
@@ -153,9 +153,13 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="TexturedTriangleShader.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="..\..\conanfile.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="TexturedTriangleShader.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

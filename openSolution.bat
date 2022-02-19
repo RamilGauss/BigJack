@@ -1,3 +1,3 @@
-xcopy .\Dependencies\Bin\*.dll .\Exe /Y
+set PATH=%PATH%;%CD%\Exe\magnum-d\importers;
 
 start BigJack.sln

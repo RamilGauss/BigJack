@@ -7,17 +7,9 @@ See for more information LICENSE.md.
 
 #include "GraphicEngineContext.h"
 
-#include <OgreOverlaySystem.h>
-#include <OgreOverlayManager.h>
-
-#include <OgreMeshManager.h>
-#include <OgreMeshManager2.h>
-#include <OgreMesh.h>
-#include <OgreMesh2.h>
-
 using namespace nsTornadoEngine;
 
-void TGraphicEngineContext::Init(nsGraphicEngine::TGraphicEngine_Ogre_ImGui* pGE)
+void TGraphicEngineContext::Init(nsGraphicEngine::TGraphicEngine* pGE)
 {
     mGE = pGE;
 
