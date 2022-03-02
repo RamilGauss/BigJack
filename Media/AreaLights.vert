@@ -1,5 +1,3 @@
-#ifndef Magnum_Examples_TexturedTriangle_TexturedTriangleShader_h
-#define Magnum_Examples_TexturedTriangle_TexturedTriangleShader_h
 /*
     This file is part of Magnum.
 
@@ -7,6 +5,9 @@
 
         2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020 —
             Vladimír Vondruš <mosra@centrum.cz>
+        2017 — Jonathan Hale <squareys@googlemail.com>, based on "Real-Time
+            Polygonal-Light Shading with Linearly Transformed Cosines", by Eric
+            Heitz et al, https://eheitzresearch.wordpress.com/415-2/
 
     This is free and unencumbered software released into the public domain.
 
@@ -29,35 +30,20 @@
     CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 */
 
-#include <Magnum/GL/AbstractShaderProgram.h>
-#include <Magnum/GL/Texture.h>
-#include <Magnum/Math/Color.h>
+layout(location = 0) in vec4 position;
+layout(location = 2) in vec3 normal;
 
-namespace Magnum { namespace Examples {
+out vec4 v_position;
+out vec3 v_normal;
 
-class TexturedTriangleShader: public GL::AbstractShaderProgram {
-    public:
-        typedef GL::Attribute<0, Vector2> Position;
-        typedef GL::Attribute<1, Vector2> TextureCoordinates;
+uniform mat4 u_transformationMatrix;
+uniform mat4 u_projectionMatrix;
+uniform mat4 u_viewMatrix;
+uniform mat3 u_normalMatrix;
 
-        explicit TexturedTriangleShader();
-
-        TexturedTriangleShader& setColor(const Color3& color) {
-            setUniform(_colorUniform, color);
-            return *this;
-        }
-
-        TexturedTriangleShader& bindTexture(GL::Texture2D& texture) {
-            texture.bind(TextureUnit);
-            return *this;
-        }
-
-    private:
-        enum: Int { TextureUnit = 0 };
-
-        Int _colorUniform;
-};
-
-}}
-
-#endif
+void main() {
+    const vec4 pos = u_transformationMatrix*position;
+    v_position = pos;
+    v_normal = normalize(u_normalMatrix*normal);
+    gl_Position = u_projectionMatrix*u_viewMatrix*pos;
+}
