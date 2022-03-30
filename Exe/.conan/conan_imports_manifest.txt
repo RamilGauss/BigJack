@@ -1,10 +1,10 @@
-1645379147
+1646673339
 E:\Works\Projects\TornadoEngine\Source\BigJack\Exe\MagnumOpenDdl-d.dll: 3a42ca4ca10ccf7c1841af8fb47d9810
-E:\Works\Projects\TornadoEngine\Source\BigJack\Exe\gio-2.0-0.dll: 932904ac3095e6a52b2315eb66bbbfdd
-E:\Works\Projects\TornadoEngine\Source\BigJack\Exe\glib-2.0-0.dll: ac43c5c698d6da8671102c1282e92d15
-E:\Works\Projects\TornadoEngine\Source\BigJack\Exe\gmodule-2.0-0.dll: 6d31b5c9905d33d4b28dc357eb93dbb0
-E:\Works\Projects\TornadoEngine\Source\BigJack\Exe\gobject-2.0-0.dll: e98a7aa1cf2cf86608851a0e68ce0f38
-E:\Works\Projects\TornadoEngine\Source\BigJack\Exe\gthread-2.0-0.dll: 6ec3d8f8c62f253a8785f14679a09012
+E:\Works\Projects\TornadoEngine\Source\BigJack\Exe\gio-2.0-0.dll: 39f2d83f30815558532a5e4f26b260f8
+E:\Works\Projects\TornadoEngine\Source\BigJack\Exe\glib-2.0-0.dll: d7a9c1e54fc2435e1c3f63922d9b424e
+E:\Works\Projects\TornadoEngine\Source\BigJack\Exe\gmodule-2.0-0.dll: 9e99f844319851eb92335ed70a927dc8
+E:\Works\Projects\TornadoEngine\Source\BigJack\Exe\gobject-2.0-0.dll: 7877b1e8d38c82a2d132b6ca319effa2
+E:\Works\Projects\TornadoEngine\Source\BigJack\Exe\gthread-2.0-0.dll: f4af16f296e82fde49abf84cb1dfccb0
 E:\Works\Projects\TornadoEngine\Source\BigJack\Exe\magnum-d\audioimporters\AnyAudioImporter.dll: 40128d076f717b14d25d44bff6aab57c
 E:\Works\Projects\TornadoEngine\Source\BigJack\Exe\magnum-d\audioimporters\DrFlacAudioImporter.dll: 9c3fb4f42df9bbacfe118c25ed3ed981
 E:\Works\Projects\TornadoEngine\Source\BigJack\Exe\magnum-d\audioimporters\DrMp3AudioImporter.dll: 974a951ff4ac840b32c593b50d4da688
@@ -40,7 +40,7 @@ E:\Works\Projects\TornadoEngine\Source\BigJack\Exe\magnum-d\importers\TinyGltfIm
 E:\Works\Projects\TornadoEngine\Source\BigJack\Exe\magnum-d\sceneconverters\AnySceneConverter.dll: 314a709d876943e990035d55d785bef7
 E:\Works\Projects\TornadoEngine\Source\BigJack\Exe\magnum-d\sceneconverters\MeshOptimizerSceneConverter.dll: 4a40bb94459c0365b066fe74e4046ce6
 E:\Works\Projects\TornadoEngine\Source\BigJack\Exe\magnum-d\sceneconverters\StanfordSceneConverter.dll: 4923190c1e43be7d620a2db042dc6a36
-E:\Works\Projects\TornadoEngine\Source\BigJack\Exe\vulkan-1.dll: ed0bb4298bccf5e9bb52a75b20f696f9
+E:\Works\Projects\TornadoEngine\Source\BigJack\Exe\vulkan-1.dll: 35097c411bf6d325ce2627579b2764a8
 E:\Works\Projects\TornadoEngine\Source\BigJack\Lib\Bullet3Common_Debug.lib: ed65aac7720fb549f3875acb35316b47
 E:\Works\Projects\TornadoEngine\Source\BigJack\Lib\BulletCollision_Debug.lib: 26198a1090aedc4cbb792b65cb3d6658
 E:\Works\Projects\TornadoEngine\Source\BigJack\Lib\BulletDynamics_Debug.lib: b1e8b3bf1f8e2cd72a727f5f967e6228
@@ -87,13 +87,13 @@ E:\Works\Projects\TornadoEngine\Source\BigJack\Lib\bz2.lib: 72d62a6fce43f75276f9
 E:\Works\Projects\TornadoEngine\Source\BigJack\Lib\charset.lib: e31761292d89026be85c90cce0be7854
 E:\Works\Projects\TornadoEngine\Source\BigJack\Lib\elf.lib: 9bde14c0b916ccbb17b1aa3549d0cafc
 E:\Works\Projects\TornadoEngine\Source\BigJack\Lib\freetyped.lib: 9bff6b5d69ebaf74ba0f8d2ea424da9d
-E:\Works\Projects\TornadoEngine\Source\BigJack\Lib\gio-2.0.lib: 2d849d2ebe723824f7d6c78667e3976b
+E:\Works\Projects\TornadoEngine\Source\BigJack\Lib\gio-2.0.lib: 1227c19ff212879d8f9764ed75ad5201
 E:\Works\Projects\TornadoEngine\Source\BigJack\Lib\glfw3.lib: bc862fae522272e79e75674b02c26686
-E:\Works\Projects\TornadoEngine\Source\BigJack\Lib\glib-2.0.lib: 649a4024422991a22cd505196776a230
-E:\Works\Projects\TornadoEngine\Source\BigJack\Lib\gmodule-2.0.lib: a81c4ff39f420c598585378cb1a7e0d7
-E:\Works\Projects\TornadoEngine\Source\BigJack\Lib\gnuintl.lib: a4dc4cc8732b9b78db5adc60e211ecdd
-E:\Works\Projects\TornadoEngine\Source\BigJack\Lib\gobject-2.0.lib: 830dbade14d90e02e8405eef6e93794a
-E:\Works\Projects\TornadoEngine\Source\BigJack\Lib\gthread-2.0.lib: 39b424610c15d12f6708d1e9da08cfd7
+E:\Works\Projects\TornadoEngine\Source\BigJack\Lib\glib-2.0.lib: efd89bd9c92ad1eb4f30c7b722828d61
+E:\Works\Projects\TornadoEngine\Source\BigJack\Lib\gmodule-2.0.lib: dce8f4e77be69113bb1536a4224640f2
+E:\Works\Projects\TornadoEngine\Source\BigJack\Lib\gnuintl.lib: a8e864964520dd69a8ae59a37cbeb3ab
+E:\Works\Projects\TornadoEngine\Source\BigJack\Lib\gobject-2.0.lib: 730ffa6c1fd99d00e35335cd42cfc790
+E:\Works\Projects\TornadoEngine\Source\BigJack\Lib\gthread-2.0.lib: daa0278696f91099f1b5e22c69a88b10
 E:\Works\Projects\TornadoEngine\Source\BigJack\Lib\harfbuzz.lib: d933bd103ab7fe0b74e4e79d3cabcce8
 E:\Works\Projects\TornadoEngine\Source\BigJack\Lib\iconv.lib: 67eeb395f4fd0d8ae0cd06cbf3c26c69
 E:\Works\Projects\TornadoEngine\Source\BigJack\Lib\imgui.lib: 05ee4faaf8a150c347f9b14a865c7d3d
@@ -136,12 +136,12 @@ E:\Works\Projects\TornadoEngine\Source\BigJack\Lib\magnum-d\sceneconverters\AnyS
 E:\Works\Projects\TornadoEngine\Source\BigJack\Lib\magnum-d\sceneconverters\MeshOptimizerSceneConverter.lib: 66f22fb63fd74f40ad7c2332f9dda235
 E:\Works\Projects\TornadoEngine\Source\BigJack\Lib\magnum-d\sceneconverters\StanfordSceneConverter.lib: 8f9ce7f99fdebac439bdaff916094455
 E:\Works\Projects\TornadoEngine\Source\BigJack\Lib\meshoptimizer.lib: ad698ab5de5f59e2987a6a4788fb562b
-E:\Works\Projects\TornadoEngine\Source\BigJack\Lib\minizip.lib: 36fddf67adfe58f9351167cd877cfc36
-E:\Works\Projects\TornadoEngine\Source\BigJack\Lib\pcre16d.lib: 350e26bbb6ce9b65e329be8e30a018b4
-E:\Works\Projects\TornadoEngine\Source\BigJack\Lib\pcre32d.lib: ca06e721c772e8275658018e54b1f8eb
-E:\Works\Projects\TornadoEngine\Source\BigJack\Lib\pcred.lib: c0f3f183058985258bcce40983ded917
-E:\Works\Projects\TornadoEngine\Source\BigJack\Lib\pcreposixd.lib: ea8cf184674b55d5233fcda2ae299b91
+E:\Works\Projects\TornadoEngine\Source\BigJack\Lib\minizip.lib: a4d974d2fbb5ab563cb185a9ffea99b7
+E:\Works\Projects\TornadoEngine\Source\BigJack\Lib\pcre16d.lib: 2b0113c3fbba54a9239c8672d9139bd5
+E:\Works\Projects\TornadoEngine\Source\BigJack\Lib\pcre32d.lib: 742d81ff8e46b59325a09f0f1d72bbdf
+E:\Works\Projects\TornadoEngine\Source\BigJack\Lib\pcred.lib: ec4a3044ae1cca1b332fd3c6907db5a2
+E:\Works\Projects\TornadoEngine\Source\BigJack\Lib\pcreposixd.lib: f8aac9652af93fc1255a9b41059b4167
 E:\Works\Projects\TornadoEngine\Source\BigJack\Lib\poly2tri.lib: 6423af9c796e9fbdcbc52ad20cf12c8b
-E:\Works\Projects\TornadoEngine\Source\BigJack\Lib\vulkan-1.lib: f3ab7a03ff35f39a6f0176b82641689b
+E:\Works\Projects\TornadoEngine\Source\BigJack\Lib\vulkan-1.lib: d49a87b2af0239a26c76e15901fad943
 E:\Works\Projects\TornadoEngine\Source\BigJack\Lib\zip.lib: c8cb188a094e91d703da539632f712ca
 E:\Works\Projects\TornadoEngine\Source\BigJack\Lib\zlib.lib: f5b885f1ab687f1206799a0ad1edf260

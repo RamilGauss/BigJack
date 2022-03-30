@@ -29,10 +29,10 @@ C:/Users/Gauss/.conan/data/poly2tri/cci.20130502/_/_/package/d057732059ea44a4776
 C:/Users/Gauss/.conan/data/rapidjson/cci.20200410/_/_/package/5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9/include
 C:/Users/Gauss/.conan/data/freetype/2.11.0/_/_/package/c69bad48274e7fc45c887cddc32aa0459f0a81e0/include
 C:/Users/Gauss/.conan/data/freetype/2.11.0/_/_/package/c69bad48274e7fc45c887cddc32aa0459f0a81e0/include/freetype2
-C:/.conan/f02621/1/include
-C:/.conan/f02621/1/include/gio-win32-2.0
-C:/.conan/f02621/1/include/glib-2.0
-C:/.conan/f02621/1/lib/glib-2.0/include
+C:/.conan/5541b8/1/include
+C:/.conan/5541b8/1/include/gio-win32-2.0
+C:/.conan/5541b8/1/include/glib-2.0
+C:/.conan/5541b8/1/lib/glib-2.0/include
 C:/Users/Gauss/.conan/data/vulkan-headers/1.2.190/_/_/package/5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9/include
 C:/Users/Gauss/.conan/data/vulkan-headers/1.2.190/_/_/package/5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9/res/vulkan/registry
 C:/Users/Gauss/.conan/data/libpng/1.6.37/_/_/package/8b1ef0ec9599374db4689199730c00a0d5f4de36/include
@@ -41,7 +41,7 @@ C:/Users/Gauss/.conan/data/brotli/1.0.9/_/_/package/d057732059ea44a47760900cb5e4
 C:/Users/Gauss/.conan/data/libffi/3.4.2/_/_/package/d057732059ea44a47760900cb5e4855d2bea8714/include
 C:/Users/Gauss/.conan/data/pcre/8.45/_/_/package/7a162084f5550c625a8950e9b1175d1474d2fbab/include
 C:/Users/Gauss/.conan/data/libelf/0.8.13/_/_/package/d057732059ea44a47760900cb5e4855d2bea8714/include
-C:/Users/Gauss/.conan/data/libgettext/0.20.1/_/_/package/e0c22822cdf05b624135e1696ae5cb784a23aeb3/include
+C:/Users/Gauss/.conan/data/libgettext/0.21/_/_/package/e0c22822cdf05b624135e1696ae5cb784a23aeb3/include
 C:/Users/Gauss/.conan/data/zlib/1.2.11/_/_/package/d057732059ea44a47760900cb5e4855d2bea8714/include
 C:/Users/Gauss/.conan/data/bzip2/1.0.8/_/_/package/589a23dff5fdb23a7fb851223eb766480ead0a9a/include
 C:/Users/Gauss/.conan/data/libiconv/1.16/_/_/package/d057732059ea44a47760900cb5e4855d2bea8714/include
@@ -79,13 +79,13 @@ C:/Users/Gauss/.conan/data/utfcpp/3.1.2/_/_/package/5ab84d6acfe1f23c4fae0ab88f26
 C:/Users/Gauss/.conan/data/kuba-zip/0.1.31/_/_/package/d057732059ea44a47760900cb5e4855d2bea8714/lib
 C:/Users/Gauss/.conan/data/poly2tri/cci.20130502/_/_/package/d057732059ea44a47760900cb5e4855d2bea8714/lib
 C:/Users/Gauss/.conan/data/freetype/2.11.0/_/_/package/c69bad48274e7fc45c887cddc32aa0459f0a81e0/lib
-C:/.conan/f02621/1/lib
+C:/.conan/5541b8/1/lib
 C:/Users/Gauss/.conan/data/libpng/1.6.37/_/_/package/8b1ef0ec9599374db4689199730c00a0d5f4de36/lib
 C:/Users/Gauss/.conan/data/brotli/1.0.9/_/_/package/d057732059ea44a47760900cb5e4855d2bea8714/lib
 C:/Users/Gauss/.conan/data/libffi/3.4.2/_/_/package/d057732059ea44a47760900cb5e4855d2bea8714/lib
 C:/Users/Gauss/.conan/data/pcre/8.45/_/_/package/7a162084f5550c625a8950e9b1175d1474d2fbab/lib
 C:/Users/Gauss/.conan/data/libelf/0.8.13/_/_/package/d057732059ea44a47760900cb5e4855d2bea8714/lib
-C:/Users/Gauss/.conan/data/libgettext/0.20.1/_/_/package/e0c22822cdf05b624135e1696ae5cb784a23aeb3/lib
+C:/Users/Gauss/.conan/data/libgettext/0.21/_/_/package/e0c22822cdf05b624135e1696ae5cb784a23aeb3/lib
 C:/Users/Gauss/.conan/data/zlib/1.2.11/_/_/package/d057732059ea44a47760900cb5e4855d2bea8714/lib
 C:/Users/Gauss/.conan/data/bzip2/1.0.8/_/_/package/589a23dff5fdb23a7fb851223eb766480ead0a9a/lib
 C:/Users/Gauss/.conan/data/libiconv/1.16/_/_/package/d057732059ea44a47760900cb5e4855d2bea8714/lib
@@ -98,7 +98,7 @@ C:/Users/Gauss/.conan/data/imgui/1.84.2/_/_/package/d057732059ea44a47760900cb5e4
 C:/.conan/c23323/1/bin
 C:/Users/Gauss/.conan/data/vulkan-loader/1.2.190/_/_/package/911dbff08788088dfd2d5b05bce9ee819fe53031/bin
 C:/Users/Gauss/.conan/data/freetype/2.11.0/_/_/package/c69bad48274e7fc45c887cddc32aa0459f0a81e0/bin
-C:/.conan/f02621/1/bin
+C:/.conan/5541b8/1/bin
 C:/Users/Gauss/.conan/data/pcre/8.45/_/_/package/7a162084f5550c625a8950e9b1175d1474d2fbab/bin
 C:/Users/Gauss/.conan/data/bzip2/1.0.8/_/_/package/589a23dff5fdb23a7fb851223eb766480ead0a9a/bin
 C:/Users/Gauss/.conan/data/libiconv/1.16/_/_/package/d057732059ea44a47760900cb5e4855d2bea8714/bin
@@ -107,7 +107,7 @@ C:/Users/Gauss/.conan/data/libiconv/1.16/_/_/package/d057732059ea44a47760900cb5e
 C:/Users/Gauss/.conan/data/libjpeg/9d/_/_/package/d057732059ea44a47760900cb5e4855d2bea8714/res
 C:/Users/Gauss/.conan/data/imgui/1.84.2/_/_/package/d057732059ea44a47760900cb5e4855d2bea8714/res
 C:/Users/Gauss/.conan/data/freetype/2.11.0/_/_/package/c69bad48274e7fc45c887cddc32aa0459f0a81e0/res
-C:/.conan/f02621/1/res
+C:/.conan/5541b8/1/res
 C:/Users/Gauss/.conan/data/vulkan-headers/1.2.190/_/_/package/5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9/res
 
 [builddirs]
@@ -137,7 +137,7 @@ C:/Users/Gauss/.conan/data/poly2tri/cci.20130502/_/_/package/d057732059ea44a4776
 C:/Users/Gauss/.conan/data/rapidjson/cci.20200410/_/_/package/5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9/
 C:/Users/Gauss/.conan/data/freetype/2.11.0/_/_/package/c69bad48274e7fc45c887cddc32aa0459f0a81e0/
 C:/Users/Gauss/.conan/data/freetype/2.11.0/_/_/package/c69bad48274e7fc45c887cddc32aa0459f0a81e0/lib/cmake
-C:/.conan/f02621/1/
+C:/.conan/5541b8/1/
 C:/Users/Gauss/.conan/data/opengl/system/_/_/package/5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9/
 C:/Users/Gauss/.conan/data/vulkan-headers/1.2.190/_/_/package/5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9/
 C:/Users/Gauss/.conan/data/libpng/1.6.37/_/_/package/8b1ef0ec9599374db4689199730c00a0d5f4de36/
@@ -145,7 +145,7 @@ C:/Users/Gauss/.conan/data/brotli/1.0.9/_/_/package/d057732059ea44a47760900cb5e4
 C:/Users/Gauss/.conan/data/libffi/3.4.2/_/_/package/d057732059ea44a47760900cb5e4855d2bea8714/
 C:/Users/Gauss/.conan/data/pcre/8.45/_/_/package/7a162084f5550c625a8950e9b1175d1474d2fbab/
 C:/Users/Gauss/.conan/data/libelf/0.8.13/_/_/package/d057732059ea44a47760900cb5e4855d2bea8714/
-C:/Users/Gauss/.conan/data/libgettext/0.20.1/_/_/package/e0c22822cdf05b624135e1696ae5cb784a23aeb3/
+C:/Users/Gauss/.conan/data/libgettext/0.21/_/_/package/e0c22822cdf05b624135e1696ae5cb784a23aeb3/
 C:/Users/Gauss/.conan/data/zlib/1.2.11/_/_/package/d057732059ea44a47760900cb5e4855d2bea8714/
 C:/Users/Gauss/.conan/data/bzip2/1.0.8/_/_/package/589a23dff5fdb23a7fb851223eb766480ead0a9a/
 C:/Users/Gauss/.conan/data/bzip2/1.0.8/_/_/package/589a23dff5fdb23a7fb851223eb766480ead0a9a/lib/cmake
@@ -1968,22 +1968,22 @@ cmake_find_package_multi=freetype
 
 
 [includedirs_glib]
-C:/.conan/f02621/1/include
-C:/.conan/f02621/1/include/gio-win32-2.0
-C:/.conan/f02621/1/include/glib-2.0
-C:/.conan/f02621/1/lib/glib-2.0/include
+C:/.conan/5541b8/1/include
+C:/.conan/5541b8/1/include/gio-win32-2.0
+C:/.conan/5541b8/1/include/glib-2.0
+C:/.conan/5541b8/1/lib/glib-2.0/include
 
 [libdirs_glib]
-C:/.conan/f02621/1/lib
+C:/.conan/5541b8/1/lib
 
 [bindirs_glib]
-C:/.conan/f02621/1/bin
+C:/.conan/5541b8/1/bin
 
 [resdirs_glib]
-C:/.conan/f02621/1/res
+C:/.conan/5541b8/1/res
 
 [builddirs_glib]
-C:/.conan/f02621/1/
+C:/.conan/5541b8/1/
 
 [libs_glib]
 gthread-2.0
@@ -2027,7 +2027,7 @@ advapi32
 
 
 [rootpath_glib]
-C:/.conan/f02621/1
+C:/.conan/5541b8/1
 
 [name_glib]
 glib
@@ -2504,10 +2504,10 @@ libelf
 
 
 [includedirs_libgettext]
-C:/Users/Gauss/.conan/data/libgettext/0.20.1/_/_/package/e0c22822cdf05b624135e1696ae5cb784a23aeb3/include
+C:/Users/Gauss/.conan/data/libgettext/0.21/_/_/package/e0c22822cdf05b624135e1696ae5cb784a23aeb3/include
 
 [libdirs_libgettext]
-C:/Users/Gauss/.conan/data/libgettext/0.20.1/_/_/package/e0c22822cdf05b624135e1696ae5cb784a23aeb3/lib
+C:/Users/Gauss/.conan/data/libgettext/0.21/_/_/package/e0c22822cdf05b624135e1696ae5cb784a23aeb3/lib
 
 [bindirs_libgettext]
 
@@ -2516,7 +2516,7 @@ C:/Users/Gauss/.conan/data/libgettext/0.20.1/_/_/package/e0c22822cdf05b624135e16
 
 
 [builddirs_libgettext]
-C:/Users/Gauss/.conan/data/libgettext/0.20.1/_/_/package/e0c22822cdf05b624135e1696ae5cb784a23aeb3/
+C:/Users/Gauss/.conan/data/libgettext/0.21/_/_/package/e0c22822cdf05b624135e1696ae5cb784a23aeb3/
 
 [libs_libgettext]
 gnuintl
@@ -2552,13 +2552,13 @@ gnuintl
 
 
 [rootpath_libgettext]
-C:/Users/Gauss/.conan/data/libgettext/0.20.1/_/_/package/e0c22822cdf05b624135e1696ae5cb784a23aeb3
+C:/Users/Gauss/.conan/data/libgettext/0.21/_/_/package/e0c22822cdf05b624135e1696ae5cb784a23aeb3
 
 [name_libgettext]
 libgettext
 
 [version_libgettext]
-0.20.1
+0.21
 
 [generatornames_libgettext]
 cmake_find_package=Intl
@@ -2836,8 +2836,8 @@ VULKAN_SDK=C:\Users\Gauss\.conan\data\vulkan-loader\1.2.190\_\_\package\911dbff0
 FT2_CONFIG=C:\Users\Gauss\.conan\data\freetype\2.11.0\_\_\package\c69bad48274e7fc45c887cddc32aa0459f0a81e0\bin\freetype-config
 PATH=["C:\Users\Gauss\.conan\data\freetype\2.11.0\_\_\package\c69bad48274e7fc45c887cddc32aa0459f0a81e0\bin"]
 [ENV_glib]
-GLIB_COMPILE_SCHEMAS=C:\.conan\f02621\1\bin\glib-compile-schemas
-PATH=["C:\.conan\f02621\1\bin"]
+GLIB_COMPILE_SCHEMAS=C:\.conan\5541b8\1\bin\glib-compile-schemas
+PATH=["C:\.conan\5541b8\1\bin"]
 [ENV_opengl]
 [ENV_vulkan-headers]
 [ENV_libpng]

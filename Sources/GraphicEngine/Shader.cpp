@@ -6,7 +6,7 @@ See for more information LICENSE.md.
 */
 
 
-#include "BaseShader.h"
+#include "Shader.h"
 
 #include <Corrade/Containers/Reference.h>
 #include <Corrade/Utility/Resource.h>
@@ -22,7 +22,7 @@ namespace
     enum : Int { TextureLayer = 0 };
 }
 
-TBaseShader::TBaseShader()
+TShader::TShader()
 {
     Utility::Resource rs("data");
 
@@ -43,7 +43,13 @@ TBaseShader::TBaseShader()
     setUniform(uniformLocation("textureData"), TextureLayer);
 }
 //--------------------------------------------------------------------------
-TBaseShader& TBaseShader::setTexture(GL::CubeMapTexture& texture)
+TShader& TShader::setTransformationProjectionMatrix(const Magnum::Matrix4& matrix)
+{
+    setUniform(_transformationProjectionMatrixUniform, matrix);
+    return *this;
+}
+//--------------------------------------------------------------------------
+TShader& TShader::setTexture(GL::CubeMapTexture& texture)
 {
     texture.bind(TextureLayer);
     return *this;

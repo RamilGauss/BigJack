@@ -1,11 +1,28 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="Source Files">
-      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    <Filter Include="Engine">
+      <UniqueIdentifier>{701490d2-4e42-478d-968f-71bddbc7aeb2}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files">
+    <Filter Include="Units">
+      <UniqueIdentifier>{1eeb2c65-7fc0-4de7-9045-b22e605934cd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Units\Object">
+      <UniqueIdentifier>{03c4e6b7-7422-4877-9de0-157a04106c5c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Context">
+      <UniqueIdentifier>{58795fed-c6d6-43a9-acce-f37e46f2365d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Stuff">
+      <UniqueIdentifier>{07150132-a138-412f-93da-005eaa21f10e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Trash">
+      <UniqueIdentifier>{2f209f00-9541-4823-a151-5cd7058fbf53}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Gui">
+      <UniqueIdentifier>{088f8976-2e59-4cdd-bbe7-b0efd3bbf8e9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Surface">
       <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
       <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
     </Filter>
@@ -14,43 +31,79 @@
     <Text Include="..\..\conanfile.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="TypeDef.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="IRenderableSurface.h">
+      <Filter>Surface</Filter>
     </ClInclude>
-    <ClInclude Include="IRenderable.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="CameraSurface.h">
+      <Filter>Surface</Filter>
     </ClInclude>
-    <ClInclude Include="GraphicEngineContext.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="TextureSurface.h">
+      <Filter>Surface</Filter>
     </ClInclude>
     <ClInclude Include="GraphicEngine.h">
-      <Filter>Header Files</Filter>
+      <Filter>Engine</Filter>
     </ClInclude>
     <ClInclude Include="RenderableObject.h">
-      <Filter>Header Files</Filter>
+      <Filter>Units\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="Texture.h">
+      <Filter>Units\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="Shader.h">
+      <Filter>Units\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="Light.h">
+      <Filter>Units</Filter>
+    </ClInclude>
+    <ClInclude Include="Camera.h">
+      <Filter>Units</Filter>
     </ClInclude>
     <ClInclude Include="Types.h">
-      <Filter>Header Files</Filter>
+      <Filter>Stuff</Filter>
     </ClInclude>
-    <ClInclude Include="BaseShader.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="TypeDef.h">
+      <Filter>Trash</Filter>
+    </ClInclude>
+    <ClInclude Include="ImGuiContext.h">
+      <Filter>Gui</Filter>
+    </ClInclude>
+    <ClInclude Include="IRenderable.h">
+      <Filter>Gui</Filter>
+    </ClInclude>
+    <ClInclude Include="GraphicEngineContext.h">
+      <Filter>Context</Filter>
+    </ClInclude>
+    <ClInclude Include="Mesh.h">
+      <Filter>Units\Object</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="GraphicEngine.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="GraphicEngineContext.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Engine</Filter>
     </ClCompile>
     <ClCompile Include="RenderableObject.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Units\Object</Filter>
+    </ClCompile>
+    <ClCompile Include="Shader.cpp">
+      <Filter>Units\Object</Filter>
     </ClCompile>
     <ClCompile Include="Types.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Stuff</Filter>
     </ClCompile>
-    <ClCompile Include="BaseShader.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="GraphicEngineContext.cpp">
+      <Filter>Context</Filter>
+    </ClCompile>
+    <ClCompile Include="Mesh.cpp">
+      <Filter>Units\Object</Filter>
+    </ClCompile>
+    <ClCompile Include="Texture.cpp">
+      <Filter>Units\Object</Filter>
+    </ClCompile>
+    <ClCompile Include="Camera.cpp">
+      <Filter>Units</Filter>
+    </ClCompile>
+    <ClCompile Include="Light.cpp">
+      <Filter>Units</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

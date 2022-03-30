@@ -22,19 +22,31 @@
     <Text Include="..\..\conanfile.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="BaseShader.h" />
+    <ClInclude Include="Camera.h" />
+    <ClInclude Include="CameraSurface.h" />
+    <ClInclude Include="ImGuiContext.h" />
+    <ClInclude Include="IRenderableSurface.h" />
+    <ClInclude Include="Light.h" />
+    <ClInclude Include="Mesh.h" />
+    <ClInclude Include="Shader.h" />
     <ClInclude Include="GraphicEngine.h" />
     <ClInclude Include="GraphicEngineContext.h" />
     <ClInclude Include="IRenderable.h" />
     <ClInclude Include="RenderableObject.h" />
+    <ClInclude Include="Texture.h" />
+    <ClInclude Include="TextureSurface.h" />
     <ClInclude Include="TypeDef.h" />
     <ClInclude Include="Types.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="BaseShader.cpp" />
+    <ClCompile Include="Camera.cpp" />
+    <ClCompile Include="Light.cpp" />
+    <ClCompile Include="Mesh.cpp" />
+    <ClCompile Include="Shader.cpp" />
     <ClCompile Include="GraphicEngineContext.cpp" />
     <ClCompile Include="GraphicEngine.cpp" />
     <ClCompile Include="RenderableObject.cpp" />
+    <ClCompile Include="Texture.cpp" />
     <ClCompile Include="Types.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

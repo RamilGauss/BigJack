@@ -11,8 +11,7 @@ See for more information LICENSE.md.
 
 #include "TypeDef.h"
 
-#include <Magnum/Platform/Sdl2Application.h>
-
+#include "Types.h"
 
 #include <Magnum/ResourceManager.h>
 #include <Magnum/GL/GL.h>
@@ -36,30 +35,13 @@ See for more information LICENSE.md.
 #include <Magnum/SceneGraph/Camera.h>
 #include <Magnum/Trade/AbstractImporter.h>
 
-
 namespace nsGraphicEngine
 {
-    using Object3D = Magnum::SceneGraph::Object<Magnum::SceneGraph::MatrixTransformation3D>;
-    using Scene3D = Magnum::SceneGraph::Scene<Magnum::SceneGraph::MatrixTransformation3D>;
-
-
     class TGraphicEngineContext;
-
-    struct DllExport TConfiguration
-    {
-
-    };
 
     class DllExport TGraphicEngine : public Magnum::Platform::Sdl2Application
     {
         std::list<TGraphicEngineContext*> mContexts;
-
-        Scene3D _scene;
-        Magnum::SceneGraph::DrawableGroup3D _drawables;
-
-        Object3D* _cameraObject;
-        Magnum::SceneGraph::Camera3D* _camera;
-
 
     public:
 
@@ -70,6 +52,10 @@ namespace nsGraphicEngine
 
         bool Work();
 
+        TGraphicEngineContext* CreateContext();
+        void DestroyContext(TGraphicEngineContext* pCtx);
+
+    protected:
         void drawEvent() override;
 
         void viewportEvent(ViewportEvent& event) override;
