@@ -49,17 +49,11 @@
     <ClInclude Include="Texture.h">
       <Filter>Units\Object</Filter>
     </ClInclude>
-    <ClInclude Include="Shader.h">
-      <Filter>Units\Object</Filter>
-    </ClInclude>
     <ClInclude Include="Light.h">
       <Filter>Units</Filter>
     </ClInclude>
     <ClInclude Include="Camera.h">
       <Filter>Units</Filter>
-    </ClInclude>
-    <ClInclude Include="Types.h">
-      <Filter>Stuff</Filter>
     </ClInclude>
     <ClInclude Include="TypeDef.h">
       <Filter>Trash</Filter>
@@ -76,6 +70,21 @@
     <ClInclude Include="Mesh.h">
       <Filter>Units\Object</Filter>
     </ClInclude>
+    <ClInclude Include="ShaderFactory.h">
+      <Filter>Stuff</Filter>
+    </ClInclude>
+    <ClInclude Include="TextureFactory.h">
+      <Filter>Stuff</Filter>
+    </ClInclude>
+    <ClInclude Include="MeshFactory.h">
+      <Filter>Stuff</Filter>
+    </ClInclude>
+    <ClInclude Include="Shader.h">
+      <Filter>Units\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="Sdl2Application.h">
+      <Filter>Engine</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="GraphicEngine.cpp">
@@ -83,12 +92,6 @@
     </ClCompile>
     <ClCompile Include="RenderableObject.cpp">
       <Filter>Units\Object</Filter>
-    </ClCompile>
-    <ClCompile Include="Shader.cpp">
-      <Filter>Units\Object</Filter>
-    </ClCompile>
-    <ClCompile Include="Types.cpp">
-      <Filter>Stuff</Filter>
     </ClCompile>
     <ClCompile Include="GraphicEngineContext.cpp">
       <Filter>Context</Filter>
@@ -104,6 +107,21 @@
     </ClCompile>
     <ClCompile Include="Light.cpp">
       <Filter>Units</Filter>
+    </ClCompile>
+    <ClCompile Include="ShaderFactory.cpp">
+      <Filter>Stuff</Filter>
+    </ClCompile>
+    <ClCompile Include="TextureFactory.cpp">
+      <Filter>Stuff</Filter>
+    </ClCompile>
+    <ClCompile Include="MeshFactory.cpp">
+      <Filter>Stuff</Filter>
+    </ClCompile>
+    <ClCompile Include="Sdl2Application.cpp">
+      <Filter>Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="Shader.cpp">
+      <Filter>Units\Object</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

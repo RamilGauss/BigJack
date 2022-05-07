@@ -9,26 +9,20 @@ See for more information LICENSE.md.
 
 #include "TypeDef.h"
 
-#include "Types.h"
-
-#include <Magnum/SceneGraph/Camera.h>
+#include <glm/mat4x4.hpp>
+#include <glm/vec2.hpp>
 
 namespace nsGraphicEngine
 {
     class DllExport TCamera
     {
-        Magnum::SceneGraph::Camera3D* mCamera3D = nullptr;
+        glm::dmat4x4 mMatrix;
 
-        Object3D* mObject = nullptr;
+        glm::dvec2 mWindowSize;
+        glm::dvec2 mWindowPosition;
 
     public:
-
-        TCamera(nsGraphicEngine::Scene3D* scene3D);
-
+        TCamera();
         virtual ~TCamera();
-
-        Magnum::SceneGraph::Camera3D* GetCamera3D();
-
-        Object3D* GetObject();
     };
 }

@@ -10,31 +10,36 @@ See for more information LICENSE.md.
 #include "TypeDef.h"
 #include <list>
 
-#include "Types.h"
-
 #include "GraphicEngine.h"
 #include "IRenderable.h"
 #include "Camera.h"
 #include "RenderableObject.h"
 #include "Light.h"
+#include "ImGuiContext.h"
 
 namespace nsGraphicEngine
 {
     class DllExport TGraphicEngineContext
     {
-        Scene3D _scene;
-        Magnum::SceneGraph::DrawableGroup3D _drawables;
-
         std::list<TCamera*> mCameras;
+        std::list<TRenderableObject*> mRenderableObjects;
 
+        TImGuiContext mImGuiContext;
+
+        TShader* mRenderableObjectShader = nullptr;
+        TShader* mGuiShader = nullptr;
+
+        TGraphicEngine* mGE = nullptr;
     public:
-        void Init(nsGraphicEngine::TGraphicEngine* pGE);
+        virtual ~TGraphicEngineContext();
+
+        void Init(TGraphicEngine* pGE);
 
         void Work();
 
         // GUI
-        void AddRender(nsGraphicEngine::IRenderable* pRenderable);
-        void RemoveRender(nsGraphicEngine::IRenderable* pRenderable);
+        void AddRender(IRenderable* pRenderable);
+        void RemoveRender(IRenderable* pRenderable);
 
         TCamera* CreateCamera();
         TRenderableObject* CreateRenderableObject();
@@ -45,6 +50,7 @@ namespace nsGraphicEngine
         void DestroyLight(TLight* pLight);
 
     private:
-        nsGraphicEngine::TGraphicEngine* mGE = nullptr;
+
+        TShader* CreateRenderableObjectShader();
     };
 }

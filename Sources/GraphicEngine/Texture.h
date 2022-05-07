@@ -14,5 +14,14 @@ namespace nsGraphicEngine
     class DllExport TTexture
     {
     public:
+        int mWidth = 0;
+        int mHeight = 0;
+        int mBpp = 0;
+
+        unsigned char* mData = nullptr;
+
+        unsigned int GetSize() const;
+
+        virtual ~TTexture();
     };
 }

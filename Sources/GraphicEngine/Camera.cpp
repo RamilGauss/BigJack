@@ -8,28 +8,25 @@ See for more information LICENSE.md.
 #include "Camera.h"
 
 using namespace nsGraphicEngine;
-using namespace Magnum;
 
-TCamera::TCamera(nsGraphicEngine::Scene3D* scene3D)
+TCamera::TCamera()
 {
-    mObject = new Object3D(scene3D);
+    //mObject = new Object3D(scene3D);
 
-    mCamera3D = new SceneGraph::Camera3D(*mObject);
+    //mCamera3D = new SceneGraph::Camera3D(*mObject);
 }
 //---------------------------------------------------------------------------------------
 TCamera::~TCamera()
 {
-    delete mObject;
-    delete mCamera3D;
 }
 //---------------------------------------------------------------------------------------
-Magnum::SceneGraph::Camera3D* TCamera::GetCamera3D()
-{
-    return mCamera3D;
-}
-//---------------------------------------------------------------------------------------
-Object3D* TCamera::GetObject()
-{
-    return mObject;
-}
-//---------------------------------------------------------------------------------------
+//Magnum::SceneGraph::Camera3D* TCamera::GetCamera3D() const
+//{
+//    return mCamera3D;
+//}
+////---------------------------------------------------------------------------------------
+//Object3D* TCamera::GetObject() const
+//{
+//    return mObject;
+//}
+////---------------------------------------------------------------------------------------

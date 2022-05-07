@@ -7,24 +7,27 @@ See for more information LICENSE.md.
 
 #pragma once
 
-#include <Magnum/GL/AbstractShaderProgram.h>
-#include <Magnum/Math/Matrix4.h>
-#include <Magnum/Types.h>
+#include <list>
+#include <glad/glad.h>
+
+#include <string>
+#include <fstream>
+#include <sstream>
+#include <iostream>
+
+#include "TypeDef.h"
 
 namespace nsGraphicEngine
 {
-    class TShader : public Magnum::GL::AbstractShaderProgram
+    class DllExport TShader
     {
+        unsigned int mId = 0;
     public:
-        typedef Magnum::GL::Attribute<0, Magnum::Vector3> Position;
+        TShader(unsigned int id);
 
-        explicit TShader();
-
-        TShader& setTransformationProjectionMatrix(const Magnum::Matrix4& matrix);
-
-        TShader& setTexture(Magnum::GL::CubeMapTexture& texture);
-
-    private:
-        Magnum::Int _transformationProjectionMatrixUniform;
+        void MakeCurrentInConveyer();
+        void SetBool(const std::string& name, bool value) const;
+        void SetInt(const std::string& name, int value) const;
+        void SetFloat(const std::string& name, float value) const;
     };
 }

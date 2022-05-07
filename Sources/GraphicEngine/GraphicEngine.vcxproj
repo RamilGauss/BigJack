@@ -28,26 +28,32 @@
     <ClInclude Include="IRenderableSurface.h" />
     <ClInclude Include="Light.h" />
     <ClInclude Include="Mesh.h" />
+    <ClInclude Include="MeshFactory.h" />
+    <ClInclude Include="Sdl2Application.h" />
     <ClInclude Include="Shader.h" />
     <ClInclude Include="GraphicEngine.h" />
     <ClInclude Include="GraphicEngineContext.h" />
     <ClInclude Include="IRenderable.h" />
     <ClInclude Include="RenderableObject.h" />
+    <ClInclude Include="ShaderFactory.h" />
     <ClInclude Include="Texture.h" />
+    <ClInclude Include="TextureFactory.h" />
     <ClInclude Include="TextureSurface.h" />
     <ClInclude Include="TypeDef.h" />
-    <ClInclude Include="Types.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Camera.cpp" />
     <ClCompile Include="Light.cpp" />
     <ClCompile Include="Mesh.cpp" />
-    <ClCompile Include="Shader.cpp" />
+    <ClCompile Include="MeshFactory.cpp" />
     <ClCompile Include="GraphicEngineContext.cpp" />
     <ClCompile Include="GraphicEngine.cpp" />
     <ClCompile Include="RenderableObject.cpp" />
+    <ClCompile Include="Sdl2Application.cpp" />
+    <ClCompile Include="Shader.cpp" />
+    <ClCompile Include="ShaderFactory.cpp" />
     <ClCompile Include="Texture.cpp" />
-    <ClCompile Include="Types.cpp" />
+    <ClCompile Include="TextureFactory.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>

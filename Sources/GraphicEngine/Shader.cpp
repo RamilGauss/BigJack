@@ -5,53 +5,32 @@ Contacts: [ramil2085@mail.ru, ramil2085@gmail.com]
 See for more information LICENSE.md.
 */
 
-
 #include "Shader.h"
 
-#include <Corrade/Containers/Reference.h>
-#include <Corrade/Utility/Resource.h>
-#include <Magnum/GL/CubeMapTexture.h>
-#include <Magnum/GL/Shader.h>
-#include <Magnum/GL/Version.h>
-
 using namespace nsGraphicEngine;
-using namespace Magnum;
 
-namespace
+TShader::TShader(unsigned int id)
 {
-    enum : Int { TextureLayer = 0 };
+    mId = id;
 }
-
-TShader::TShader()
+// ------------------------------------------------------------------------
+void TShader::MakeCurrentInConveyer()
 {
-    Utility::Resource rs("data");
-
-    GL::Shader vert(GL::Version::GL330, GL::Shader::Type::Vertex);
-    GL::Shader frag(GL::Version::GL330, GL::Shader::Type::Fragment);
-
-    vert.addSource(rs.get("CubeMapShader.vert"));
-    frag.addSource(rs.get("CubeMapShader.frag"));
-
-    CORRADE_INTERNAL_ASSERT_OUTPUT(GL::Shader::compile({vert, frag}));
-
-    attachShaders({vert, frag});
-
-    CORRADE_INTERNAL_ASSERT_OUTPUT(link());
-
-    _transformationProjectionMatrixUniform = uniformLocation("transformationProjectionMatrix");
-
-    setUniform(uniformLocation("textureData"), TextureLayer);
+    glUseProgram(mId);
 }
-//--------------------------------------------------------------------------
-TShader& TShader::setTransformationProjectionMatrix(const Magnum::Matrix4& matrix)
+// ------------------------------------------------------------------------
+void TShader::SetBool(const std::string& name, bool value) const
 {
-    setUniform(_transformationProjectionMatrixUniform, matrix);
-    return *this;
+    glUniform1i(glGetUniformLocation(mId, name.c_str()), (int)value);
 }
-//--------------------------------------------------------------------------
-TShader& TShader::setTexture(GL::CubeMapTexture& texture)
+// ------------------------------------------------------------------------
+void TShader::SetInt(const std::string& name, int value) const
 {
-    texture.bind(TextureLayer);
-    return *this;
+    glUniform1i(glGetUniformLocation(mId, name.c_str()), value);
 }
-//--------------------------------------------------------------------------
+// ------------------------------------------------------------------------
+void TShader::SetFloat(const std::string& name, float value) const
+{
+    glUniform1f(glGetUniformLocation(mId, name.c_str()), value);
+}
+// ------------------------------------------------------------------------
