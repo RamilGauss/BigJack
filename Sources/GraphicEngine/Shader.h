@@ -17,6 +17,8 @@ See for more information LICENSE.md.
 
 #include "TypeDef.h"
 
+#include <glm/glm.hpp>
+
 namespace nsGraphicEngine
 {
     class DllExport TShader
@@ -29,5 +31,7 @@ namespace nsGraphicEngine
         void SetBool(const std::string& name, bool value) const;
         void SetInt(const std::string& name, int value) const;
         void SetFloat(const std::string& name, float value) const;
+
+        void SetMat4(const std::string& name, const glm::mat4& mat) const;
     };
 }

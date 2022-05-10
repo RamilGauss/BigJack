@@ -30,6 +30,13 @@ namespace nsGraphicEngine
         void SetSize(int width, int height);
         void SetPosition(int x, int y);
 
+        const std::string GetTitle();
+        int GetWidth() const;
+        int GetHeight() const;
+
+        int GetX() const;
+        int GetY() const;
+
         bool Work();
 
         void Done();

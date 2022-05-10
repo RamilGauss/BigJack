@@ -9,10 +9,28 @@ See for more information LICENSE.md.
 
 #include "TypeDef.h"
 
+#include <vector>
+
 namespace nsGraphicEngine
 {
     class DllExport TMesh
     {
+        std::vector<float> mVertices;
     public:
+        const float* GetPointData() const;
+        int GetPointCount() const;
+        int GetDataSize() const;
+
+        struct TPoint
+        {
+            float x;
+            float y;
+            float z;
+
+            float u;
+            float v;
+        };
+
+        void AddPoint(const TPoint& point);
     };
 }

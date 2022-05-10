@@ -7,6 +7,7 @@ See for more information LICENSE.md.
 
 #include "GraphicEngineContext.h"
 #include "ShaderFactory.h"
+#include "ShaderPrefabs.h"
 
 using namespace nsGraphicEngine;
 
@@ -24,60 +25,13 @@ TGraphicEngineContext::~TGraphicEngineContext()
 //--------------------------------------------------------------------------------------------
 TShader* TGraphicEngineContext::CreateRenderableObjectShader()
 {
-    std::string vertexShaderText =
-        "layout (location = 0) in vec3 VertexPosition;"\
-        "layout (location = 1) in vec3 VertexNormal;"\
-        "layout (location = 2) in vec2 VertexTexCoord;"\
-        "out vec3 Position;"\
-        "out vec3 Normal;"\
-        "out vec2 TexCoord;"\
-        "uniform mat4 ModelViewMatrix;"\
-        "uniform mat3 NormalMatrix;"\
-        "uniform mat4 ProjectionMatrix;"\
-        "uniform mat4 MVP;"\
-        "void main()"\
-        "{"\
-        "    TexCoord = VertexTexCoord;"\
-        "    Normal = normalize(NormalMatrix * VertexNormal);"\
-        "    Position = vec3(ModelViewMatrix * vec4(VertexPosition, 1.0));"\
-        "    gl_Position = MVP * vec4(VertexPosition, 1.0);"\
-        "}";
-
-    std::string fragmentShaderText =
-        "in vec3 Position;"\
-        "in vec3 Normal;"\
-        "in vec2 TexCoord;"\
-        "uniform sampler2D Tex1;"\
-        "struct LightInfo "\
-        "{"\
-        "    vec4 Position;"\
-        "    vec3 Intensity;"\
-        "};"\
-        "uniform LightInfo Light;"\
-        "struct MaterialInfo "\
-        "{"\
-        "    vec3 Kd;"\
-        "    vec3 Ka;"\
-        "    vec3 Ks;"\
-        "    float Shininess;"\
-        "};"\
-        "uniform MaterialInfo Material;"\
-        "layout(location = 0) out vec4 FragColor;"\
-        "void phongModel(vec3 pos, vec3 norm, out vec3 ambAndDiff, out vec3 spec)"\
-        "{"\
-        "}"\
-        "void main() "\
-        "{"\
-        "    vec3 ambAndDiff, spec;"\
-        "    vec4 texColor = texture(Tex1, TexCoord);"\
-        "    phongModel(Position, Normal, ambAndDiff, spec);"\
-        "    FragColor = vec4(ambAndDiff, 1.0) * texColor + vec4(spec, 1.0);"\
-        "}";
+    auto vertexShaderText = TShaderPrefabs::GetRenderObjectVertex();
+    auto fragmentShaderText = TShaderPrefabs::GetRenderObjectFragment();
 
     std::list<nsGraphicEngine::TShaderFactory::TParams> params;
 
-    params.push_back({ GL_VERTEX_SHADER, {vertexShaderText} });
-    params.push_back({ GL_FRAGMENT_SHADER, {fragmentShaderText} });
+    params.push_back({ GL_VERTEX_SHADER, vertexShaderText });
+    params.push_back({ GL_FRAGMENT_SHADER, fragmentShaderText });
 
     auto pShader = nsGraphicEngine::TShaderFactory::Create(params);
 
@@ -86,6 +40,27 @@ TShader* TGraphicEngineContext::CreateRenderableObjectShader()
 //--------------------------------------------------------------------------------------------
 void TGraphicEngineContext::Work()
 {
+    const auto SCR_WIDTH = mGE->GetWidth();
+    const auto SCR_HEIGHT = mGE->GetHeight();
+
+    mRenderableObjectShader->MakeCurrentInConveyer();
+
+    mRenderableObjectShader->SetInt("texture1", 1);
+
+    for (auto& camera : mCameras) {
+        glm::mat4 view = camera->GetViewMatrix();
+        glm::mat4 projection = glm::perspective(glm::radians(camera->Zoom), (float)SCR_WIDTH / (float)SCR_HEIGHT, 0.1f, 100.0f);
+        mRenderableObjectShader->SetMat4("view", view);
+        mRenderableObjectShader->SetMat4("projection", projection);
+
+        for (auto& renderableObject : mRenderableObjects) {
+            auto& model = renderableObject->GetMatrix();
+            mRenderableObjectShader->SetMat4("model", model);
+
+            renderableObject->Draw();
+        }
+    }
+
     // Draw all renderable objects
     //mRenderableObjectShader
     //camera glViewport(10, 10, SCR_WIDTH - 10, SCR_HEIGHT - 10);

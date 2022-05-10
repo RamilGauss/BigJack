@@ -85,6 +85,9 @@
     <ClInclude Include="Sdl2Application.h">
       <Filter>Engine</Filter>
     </ClInclude>
+    <ClInclude Include="ShaderPrefabs.h">
+      <Filter>Context</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="GraphicEngine.cpp">
@@ -122,6 +125,9 @@
     </ClCompile>
     <ClCompile Include="Shader.cpp">
       <Filter>Units\Object</Filter>
+    </ClCompile>
+    <ClCompile Include="ShaderPrefabs.cpp">
+      <Filter>Context</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

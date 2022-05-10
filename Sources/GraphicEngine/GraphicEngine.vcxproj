@@ -36,6 +36,7 @@
     <ClInclude Include="IRenderable.h" />
     <ClInclude Include="RenderableObject.h" />
     <ClInclude Include="ShaderFactory.h" />
+    <ClInclude Include="ShaderPrefabs.h" />
     <ClInclude Include="Texture.h" />
     <ClInclude Include="TextureFactory.h" />
     <ClInclude Include="TextureSurface.h" />
@@ -52,6 +53,7 @@
     <ClCompile Include="Sdl2Application.cpp" />
     <ClCompile Include="Shader.cpp" />
     <ClCompile Include="ShaderFactory.cpp" />
+    <ClCompile Include="ShaderPrefabs.cpp" />
     <ClCompile Include="Texture.cpp" />
     <ClCompile Include="TextureFactory.cpp" />
   </ItemGroup>
