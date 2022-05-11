@@ -53,9 +53,9 @@ void TRenderableObject::SetTexture(TTexture* pTexture)
     int width = mTexture->mWidth;
     int height = mTexture->mHeight;
     int nrChannels = mTexture->mBpp;
-    // The FileSystem::getPath(...) is part of the GitHub repository so we can find files on any IDE/platform; replace it with your own image path.
+
     unsigned char* data = mTexture->mData;
-    glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, data);
+    glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, width, height, 0, GL_RGBA, GL_UNSIGNED_BYTE, data);
     glGenerateMipmap(GL_TEXTURE_2D);
 }
 //-------------------------------------------------------------------------------------------------------
@@ -73,15 +73,31 @@ TRenderableObject::~TRenderableObject()
     glDeleteBuffers(1, &VBO);
 }
 //-------------------------------------------------------------------------------------------------------
-const glm::mat4& TRenderableObject::GetMatrix() const
+glm::mat4 TRenderableObject::GetMatrix() const
 {
-    return mMatrix;
+    auto matrix = glm::mat4(1.0f);
+    matrix = glm::translate(matrix, mPosition);
+    matrix = glm::rotate(matrix, glm::radians(mRotation.x), glm::vec3(1.0f, 0.0f, 0.0f));
+    matrix = glm::rotate(matrix, glm::radians(mRotation.y), glm::vec3(0.0f, 1.0f, 0.0f));
+    matrix = glm::rotate(matrix, glm::radians(mRotation.z), glm::vec3(0.0f, 0.0f, 1.0f));
+    matrix = glm::scale(matrix, mScales);
+
+    return matrix;
 }
 //-------------------------------------------------------------------------------------------------------
-void TRenderableObject::SetPosition(glm::vec3 pos)
+void TRenderableObject::SetPosition(const glm::vec3& pos)
 {
-    mMatrix[3][0] = pos.x;
-    mMatrix[3][1] = pos.y;
-    mMatrix[3][2] = pos.z;
+    mPosition = pos;
 }
 //-------------------------------------------------------------------------------------------------------
+void TRenderableObject::SetRotation(const glm::vec3& angles)
+{
+    mRotation = angles;
+}
+//-------------------------------------------------------------------------------------------------------
+void TRenderableObject::SetScale(const glm::vec3& scales)
+{
+    mScales = scales;
+}
+//-------------------------------------------------------------------------------------------------------
+

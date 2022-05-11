@@ -27,7 +27,9 @@ namespace nsGraphicEngine
 
         unsigned int texture = 0;
 
-        glm::mat4 mMatrix;
+        glm::vec3 mPosition = glm::vec3(0.0f, 0.0f, 0.0f);
+        glm::vec3 mRotation = glm::vec3(0.0f, 0.0f, 0.0f);
+        glm::vec3 mScales = glm::vec3(1.0f, 1.0f, 1.0f);
     public:
 
         virtual ~TRenderableObject();
@@ -37,9 +39,11 @@ namespace nsGraphicEngine
 
         void Draw();
 
-        const glm::mat4& GetMatrix() const;
+        glm::mat4 GetMatrix() const;
 
-        void SetPosition(glm::vec3 pos);
+        void SetPosition(const glm::vec3& pos);
+        void SetRotation(const glm::vec3& angles);
+        void SetScale(const glm::vec3& scales);
     private:
     };
 }

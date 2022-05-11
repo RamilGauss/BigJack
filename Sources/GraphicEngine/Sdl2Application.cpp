@@ -38,6 +38,8 @@ bool TSdl2Application::Init()
         return false;
     }
 
+    glEnable(GL_DEPTH_TEST);
+
     return true;
 }
 //-------------------------------------------------------------------------------

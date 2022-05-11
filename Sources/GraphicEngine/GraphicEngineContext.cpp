@@ -43,9 +43,11 @@ void TGraphicEngineContext::Work()
     const auto SCR_WIDTH = mGE->GetWidth();
     const auto SCR_HEIGHT = mGE->GetHeight();
 
+    glViewport(0, 0, SCR_WIDTH, SCR_HEIGHT);
+
     mRenderableObjectShader->MakeCurrentInConveyer();
 
-    mRenderableObjectShader->SetInt("texture1", 1);
+    mRenderableObjectShader->SetInt("texture1", 0);
 
     for (auto& camera : mCameras) {
         glm::mat4 view = camera->GetViewMatrix();
@@ -54,7 +56,7 @@ void TGraphicEngineContext::Work()
         mRenderableObjectShader->SetMat4("projection", projection);
 
         for (auto& renderableObject : mRenderableObjects) {
-            auto& model = renderableObject->GetMatrix();
+            auto model = renderableObject->GetMatrix();
             mRenderableObjectShader->SetMat4("model", model);
 
             renderableObject->Draw();

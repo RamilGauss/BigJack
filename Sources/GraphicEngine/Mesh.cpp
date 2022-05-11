@@ -21,7 +21,7 @@ int TMesh::GetPointCount() const
 //-------------------------------------------------------------------------------
 int TMesh::GetDataSize() const
 {
-    return mVertices.size();
+    return mVertices.size() * sizeof(float);
 }
 //-------------------------------------------------------------------------------
 void TMesh::AddPoint(const TPoint& point)

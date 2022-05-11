@@ -41,6 +41,7 @@ int main(int argc, char** argv)
 
     auto pObject = pCtx->CreateRenderableObject();
 
+    //auto pTexture = nsGraphicEngine::TTextureFactory::Load("hole.jpg");
     auto pTexture = nsGraphicEngine::TTextureFactory::Load("wood.png");
     auto pMesh = nsGraphicEngine::TMeshFactory::CreateEmpty();
 
@@ -89,7 +90,8 @@ int main(int argc, char** argv)
     pObject->SetTexture(pTexture);
     pObject->SetMesh(pMesh);
 
-    pObject->SetPosition({ 0, 0, 10 });
+    pObject->SetPosition({ 0, 0, -3 });
+    pObject->SetRotation({ 45, 45, 0 });
 
     while (true) {
         auto workResult = ge.Work();
