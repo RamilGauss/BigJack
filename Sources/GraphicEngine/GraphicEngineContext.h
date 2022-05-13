@@ -35,6 +35,8 @@ namespace nsGraphicEngine
 
         void Init(TGraphicEngine* pGE);
 
+        void HandleEvents(const std::list<SDL_Event>& events,
+            std::list<SDL_Event>& unusedEvents);
         void Work();
 
         // GUI

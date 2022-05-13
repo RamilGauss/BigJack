@@ -44,6 +44,10 @@ namespace nsGraphicEngine
         void SetPosition(const glm::vec3& pos);
         void SetRotation(const glm::vec3& angles);
         void SetScale(const glm::vec3& scales);
+
+        void AddPosition(const glm::vec3& pos);
+        void AddRotation(const glm::vec3& angles);
+        void AddScale(const glm::vec3& scales);
     private:
     };
 }

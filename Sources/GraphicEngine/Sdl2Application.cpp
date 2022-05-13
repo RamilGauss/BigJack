@@ -40,6 +40,8 @@ bool TSdl2Application::Init()
 
     glEnable(GL_DEPTH_TEST);
 
+    mKeyMouseEventHandler.SetContainer(&mKeyMouseEventContainer);
+
     return true;
 }
 //-------------------------------------------------------------------------------
@@ -91,32 +93,50 @@ int TSdl2Application::GetY() const
     return y;
 }
 //-------------------------------------------------------------------------------
-bool TSdl2Application::Work()
+bool TSdl2Application::GenerateInputEvents()
 {
+    bool done = false;
+    std::list<SDL_Event> newEvents;
+
     SDL_Event event;
-    while (true) {
-        auto pollResult = SDL_PollEvent(&event);
-
+    while (SDL_PollEvent(&event)) {
         if (event.type == SDL_QUIT) {
-            return false;
+            done = true;
+        }
+        if ((event.type == SDL_WINDOWEVENT) &&
+            (event.window.event == SDL_WINDOWEVENT_CLOSE) &&
+            (event.window.windowID == SDL_GetWindowID(mWindow))) {
+            done = true;
         }
 
-        HandleEvent(event);
-
-        if (pollResult == 0) {
-            break;
-        }
+        newEvents.push_back(event);
     }
 
+    mKeyMouseEventHandler.ClearEvents();
+
+    if (newEvents.size() == 0) {
+        return !done;
+    }
+
+    std::list<SDL_Event> afterGuiEvents;
+    ApplyInputEventsToGui(newEvents, afterGuiEvents);
+
+    for (auto& event : afterGuiEvents) {
+        mKeyMouseEventHandler.AddSdl2Event(event);
+    }
+
+    return !done;
+}
+//-------------------------------------------------------------------------------
+void TSdl2Application::Draw()
+{
     Render();
 
     SDL_GL_SwapWindow(mWindow);
-    return true;
 }
 //-------------------------------------------------------------------------------
 void TSdl2Application::Done()
 {
-    // Destroy everything to not leak memory.
     SDL_GL_DeleteContext(mCtx);
     SDL_DestroyRenderer(mRenderer);
     SDL_DestroyWindow(mWindow);
@@ -127,5 +147,10 @@ void TSdl2Application::Done()
 const std::string TSdl2Application::GetLastError() const
 {
     return SDL_GetError();
+}
+//-------------------------------------------------------------------------------
+const TKeyMouseEventContainer* TSdl2Application::GetKeyMouseContainer() const
+{
+    return &mKeyMouseEventContainer;
 }
 //-------------------------------------------------------------------------------

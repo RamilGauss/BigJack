@@ -25,7 +25,6 @@ const std::list<std::string> TShaderPrefabs::GetRenderObjectVertex()
     "void main()\n" \
     "{\n" \
     "    gl_Position = projection * view * model * vec4(aPos, 1.0f);\n" \
-    "//    gl_Position = vec4(aPos, 1.0f);\n" \
     "    TexCoord = vec2(aTexCoord.x, aTexCoord.y);\n" \
     "}";
 

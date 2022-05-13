@@ -26,6 +26,9 @@
       <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
       <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
     </Filter>
+    <Filter Include="Events">
+      <UniqueIdentifier>{10c30f93-0c92-4f9e-8e9f-bad790120c06}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="..\..\conanfile.txt" />
@@ -88,6 +91,18 @@
     <ClInclude Include="ShaderPrefabs.h">
       <Filter>Context</Filter>
     </ClInclude>
+    <ClInclude Include="Events.h">
+      <Filter>Events</Filter>
+    </ClInclude>
+    <ClInclude Include="KeyCodes.h">
+      <Filter>Events</Filter>
+    </ClInclude>
+    <ClInclude Include="KeyMouseEventContainer.h">
+      <Filter>Events</Filter>
+    </ClInclude>
+    <ClInclude Include="KeyMouseEventHandler.h">
+      <Filter>Events</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="GraphicEngine.cpp">
@@ -128,6 +143,9 @@
     </ClCompile>
     <ClCompile Include="ShaderPrefabs.cpp">
       <Filter>Context</Filter>
+    </ClCompile>
+    <ClCompile Include="KeyMouseEventHandler.cpp">
+      <Filter>Events</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

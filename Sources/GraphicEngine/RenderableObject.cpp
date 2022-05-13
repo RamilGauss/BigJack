@@ -39,6 +39,19 @@ void TRenderableObject::SetMesh(TMesh* pMesh)
 //-------------------------------------------------------------------------------------------------------
 void TRenderableObject::SetTexture(TTexture* pTexture)
 {
+    //GLenum format;
+    //if (nrComponents == 1)
+    //    format = GL_RED;
+    //else if (nrComponents == 3)
+    //    format = GL_RGB;
+    //else if (nrComponents == 4)
+    //    format = GL_RGBA;
+
+    //glBindTexture(GL_TEXTURE_2D, textureID);
+    //glTexImage2D(GL_TEXTURE_2D, 0, format, width, height, 0, format, GL_UNSIGNED_BYTE, data);
+    //glGenerateMipmap(GL_TEXTURE_2D);
+
+
     mTexture = pTexture;
 
     glGenTextures(1, &texture);
@@ -98,6 +111,21 @@ void TRenderableObject::SetRotation(const glm::vec3& angles)
 void TRenderableObject::SetScale(const glm::vec3& scales)
 {
     mScales = scales;
+}
+//-------------------------------------------------------------------------------------------------------
+void TRenderableObject::AddPosition(const glm::vec3& pos)
+{
+    mPosition += pos;
+}
+//-------------------------------------------------------------------------------------------------------
+void TRenderableObject::AddRotation(const glm::vec3& angles)
+{
+    mRotation += angles;
+}
+//-------------------------------------------------------------------------------------------------------
+void TRenderableObject::AddScale(const glm::vec3& scales)
+{
+    mScales += scales;
 }
 //-------------------------------------------------------------------------------------------------------
 

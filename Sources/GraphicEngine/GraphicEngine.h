@@ -21,6 +21,8 @@ namespace nsGraphicEngine
     {
         std::list<TGraphicEngineContext*> mContexts;
 
+        TGraphicEngineContext* mActiveCtx = nullptr;
+
     public:
         enum class PipeLineType
         {
@@ -33,6 +35,7 @@ namespace nsGraphicEngine
     protected:
         void Render() override;
 
-        void HandleEvent(const SDL_Event& event) override {}
+        void ApplyInputEventsToGui(const std::list<SDL_Event>& events,
+            std::list<SDL_Event>& unusedEvents) override;
     };
 }

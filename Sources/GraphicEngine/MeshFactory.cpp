@@ -17,9 +17,6 @@ TMesh* TMeshFactory::CreateEmpty()
 //-----------------------------------------------------------------------------------------------
 TMesh* TMeshFactory::CreateCube(float size)
 {
-    //Magnum::Primitives::cubeSolid();
-
-
     return new TMesh();
 }
 //-----------------------------------------------------------------------------------------------
@@ -45,6 +42,6 @@ TMesh* TMeshFactory::CreateCylinder(float height, float radius, int pointCount)
 //-----------------------------------------------------------------------------------------------
 void TMeshFactory::Destroy(TMesh* pMesh)
 {
-
+    delete pMesh;
 }
 //-----------------------------------------------------------------------------------------------

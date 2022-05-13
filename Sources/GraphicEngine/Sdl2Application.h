@@ -13,6 +13,7 @@ See for more information LICENSE.md.
 #include <glad/glad.h>
 
 #include "TypeDef.h"
+#include "KeyMouseEventHandler.h"
 
 namespace nsGraphicEngine
 {
@@ -21,6 +22,9 @@ namespace nsGraphicEngine
         SDL_GLContext mCtx;
         SDL_Renderer* mRenderer = nullptr;
         SDL_Window* mWindow = nullptr;
+
+        TKeyMouseEventHandler mKeyMouseEventHandler;
+        TKeyMouseEventContainer mKeyMouseEventContainer;
     public:
         virtual ~TSdl2Application() {}
 
@@ -37,12 +41,18 @@ namespace nsGraphicEngine
         int GetX() const;
         int GetY() const;
 
-        bool Work();
+        bool GenerateInputEvents();
+        void Draw();
 
         void Done();
         const std::string GetLastError() const;
+
+        const TKeyMouseEventContainer* GetKeyMouseContainer() const;
     protected:
-        virtual void HandleEvent(const SDL_Event& event) = 0;
+        virtual void ApplyInputEventsToGui(const std::list<SDL_Event>& events, 
+            std::list<SDL_Event>& unusedEvents) = 0;
+
         virtual void Render() = 0;
+
     };
 }

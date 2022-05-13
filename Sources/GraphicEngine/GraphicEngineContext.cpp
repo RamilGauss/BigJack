@@ -40,18 +40,23 @@ TShader* TGraphicEngineContext::CreateRenderableObjectShader()
 //--------------------------------------------------------------------------------------------
 void TGraphicEngineContext::Work()
 {
+    // Draw all renderable objects
     const auto SCR_WIDTH = mGE->GetWidth();
     const auto SCR_HEIGHT = mGE->GetHeight();
-
-    glViewport(0, 0, SCR_WIDTH, SCR_HEIGHT);
 
     mRenderableObjectShader->MakeCurrentInConveyer();
 
     mRenderableObjectShader->SetInt("texture1", 0);
 
     for (auto& camera : mCameras) {
-        glm::mat4 view = camera->GetViewMatrix();
-        glm::mat4 projection = glm::perspective(glm::radians(camera->Zoom), (float)SCR_WIDTH / (float)SCR_HEIGHT, 0.1f, 100.0f);
+
+        auto winSize = camera->GetWindowSize();
+        auto winPos = camera->GetWindowPosition();
+
+        glViewport(winPos.x, winPos.y, winSize.x, winSize.y);
+
+        glm::mat4 view = camera->GetMatrix();
+        glm::mat4 projection = glm::perspective(glm::radians(camera->GetZoom()), winSize.x / winSize.y, 0.1f, 100.0f);
         mRenderableObjectShader->SetMat4("view", view);
         mRenderableObjectShader->SetMat4("projection", projection);
 
@@ -62,11 +67,6 @@ void TGraphicEngineContext::Work()
             renderableObject->Draw();
         }
     }
-
-    // Draw all renderable objects
-    //mRenderableObjectShader
-    //camera glViewport(10, 10, SCR_WIDTH - 10, SCR_HEIGHT - 10);
-
     // Draw Gui
 }
 //--------------------------------------------------------------------------------------------
@@ -114,5 +114,11 @@ void TGraphicEngineContext::DestroyRenderableObject(TRenderableObject* pRenderab
 void TGraphicEngineContext::DestroyLight(TLight* pLight)
 {
 
+}
+//--------------------------------------------------------------------------------------------
+void TGraphicEngineContext::HandleEvents(const std::list<SDL_Event>& events,
+    std::list<SDL_Event>& unusedEvents)
+{
+    unusedEvents = events;
 }
 //--------------------------------------------------------------------------------------------
