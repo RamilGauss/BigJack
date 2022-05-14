@@ -37,10 +37,6 @@
    "gl"
   ],
   [
-   "imgui:shared",
-   "False"
-  ],
-  [
    "sdl:directx",
    "True"
   ],

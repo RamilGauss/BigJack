@@ -48,6 +48,9 @@ namespace nsGraphicEngine
         const std::string GetLastError() const;
 
         const TKeyMouseEventContainer* GetKeyMouseContainer() const;
+
+        SDL_GLContext GetSdlCtx() const;
+        SDL_Window* GetSdlWindow() const;
     protected:
         virtual void ApplyInputEventsToGui(const std::list<SDL_Event>& events, 
             std::list<SDL_Event>& unusedEvents) = 0;

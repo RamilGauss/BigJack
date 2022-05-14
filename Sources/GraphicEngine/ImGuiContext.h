@@ -8,13 +8,36 @@ See for more information LICENSE.md.
 
 #pragma once
 
+#include <list>
+
 #include "TypeDef.h"
+
+#include <SDL2/SDL.h>
+
+#include "IRenderable.h"
+
+struct ImGuiContext;
 
 namespace nsGraphicEngine
 {
     class DllExport TImGuiContext
     {
-    public:
+        ImGuiContext* mImGuiCtx = nullptr;
 
+        std::list<IRenderable*> mRenderables;
+    public:
+        void Init(SDL_Window* window, void* sdl_gl_context);
+
+        void HandleEvents(const std::list<SDL_Event>& events, std::list<SDL_Event>& unusedEvents,
+            int xOffset, int yOffset);
+
+        void Render(float width, float height);
+
+        // GUI
+        void AddRender(IRenderable* pRenderable);
+        void RemoveRender(IRenderable* pRenderable);
+
+    private:
+        void CorrectEvent(SDL_Event& event, int xOffset, int yOffset);
     };
 }

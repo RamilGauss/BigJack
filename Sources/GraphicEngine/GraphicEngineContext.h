@@ -30,14 +30,15 @@ namespace nsGraphicEngine
         TShader* mGuiShader = nullptr;
 
         TGraphicEngine* mGE = nullptr;
+
+        TCamera* mGuiCamera = nullptr;
     public:
         virtual ~TGraphicEngineContext();
 
         void Init(TGraphicEngine* pGE);
 
-        void HandleEvents(const std::list<SDL_Event>& events,
-            std::list<SDL_Event>& unusedEvents);
-        void Work();
+        void HandleEvents(const std::list<SDL_Event>& events, std::list<SDL_Event>& unusedEvents);
+        void Render();
 
         // GUI
         void AddRender(IRenderable* pRenderable);
@@ -51,6 +52,8 @@ namespace nsGraphicEngine
         void DestroyRenderableObject(TRenderableObject* pRenderableObject);
         void DestroyLight(TLight* pLight);
 
+        void SetGuiCamera(TCamera* pCamera);
+        TCamera* GetGuiCamera() const;
     private:
 
         TShader* CreateRenderableObjectShader();

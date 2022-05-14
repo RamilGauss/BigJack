@@ -5,6 +5,11 @@ Contacts: [ramil2085@mail.ru, ramil2085@gmail.com]
 See for more information LICENSE.md.
 */
 
+#include<iostream>
+#include<fstream>
+#include<sstream>
+#include<string>
+
 #include <SDL_main.h>
 
 #include "GraphicEngine.h"
@@ -14,12 +19,18 @@ See for more information LICENSE.md.
 #include "ShaderFactory.h"
 #include "MeshFactory.h"
 
-#include<iostream>
-#include<fstream>
-#include<sstream>
-#include<string>
+#include "GuiDemo.h"
+
+const int W = 1024;
+const int H = 800;
+
+const int CAMERA_COUNT = 4;
 
 using namespace nsGraphicEngine;
+
+TCamera* pCamera[CAMERA_COUNT];
+
+TGuiDemo g_GuiDemo;
 
 TMesh* CreateCube()
 {
@@ -70,28 +81,24 @@ TMesh* CreateCube()
     return pMesh;
 }
 
-int main(int argc, char** argv)
+void CreateContext0(TGraphicEngine& ge)
 {
-    nsGraphicEngine::TGraphicEngine ge;
-
-    auto initResult = ge.Init();
-    if (!initResult) {
-        return 1;
-    }
-
-    ge.SetTitle("MMO-Framework");
-    ge.SetPosition(100, 100);
-    ge.SetSize(800, 600);
-
     auto pCtx = ge.CreateContext(TGraphicEngine::PipeLineType::SIMPLE);
 
-    auto pCamera = pCtx->CreateCamera();
-    pCamera->SetPosition({ 0, 0, 0 });
-    pCamera->SetWindowSize({800, 600});
+    pCtx->AddRender(&g_GuiDemo);
 
+    pCamera[0] = pCtx->CreateCamera();
+    pCamera[0]->SetPosition({ 0, 0, 0 });
+    pCamera[0]->SetWindowPosition({ 0 , 0 });
+    pCamera[0]->SetWindowSize({ W / 2 , H / 2 });
+
+    pCamera[1] = pCtx->CreateCamera();
+    pCamera[1]->SetPosition({ 0, 0, 0 });
+    pCamera[1]->SetWindowPosition({ W / 2 , 0 });
+    pCamera[1]->SetWindowSize({ W / 2 , H / 2 });
     {
         auto pObject = pCtx->CreateRenderableObject();
-        auto pTexture = TTextureFactory::Load("wood.png");
+        auto pTexture = TTextureFactory::Load("stone.tga");
         auto pMesh = CreateCube();
 
         pObject->SetTexture(pTexture);
@@ -134,7 +141,91 @@ int main(int argc, char** argv)
         pObject->SetRotation({ 45, 45, 0 });
     }
 
+    pCtx->SetGuiCamera(pCamera[0]);
+}
+
+void CreateContext1(TGraphicEngine& ge)
+{
+    auto pCtx = ge.CreateContext(TGraphicEngine::PipeLineType::SIMPLE);
+
+    pCamera[2] = pCtx->CreateCamera();
+    pCamera[2]->SetPosition({ 0, 0, 0 });
+    pCamera[2]->SetWindowPosition({ 0 , H / 2 });
+    pCamera[2]->SetWindowSize({ W / 2 , H / 2 });
+
+    pCamera[3] = pCtx->CreateCamera();
+    pCamera[3]->SetPosition({ 0, 0, 0 });
+    pCamera[3]->SetWindowPosition({ W / 2 , H / 2 });
+    pCamera[3]->SetWindowSize({ W / 2 , H / 2 });
+    {
+        auto pObject = pCtx->CreateRenderableObject();
+        auto pTexture = TTextureFactory::Load("stone.tga");
+        auto pMesh = CreateCube();
+
+        pObject->SetTexture(pTexture);
+        pObject->SetMesh(pMesh);
+
+        pObject->SetPosition({ 1, 0, 3 });
+        pObject->SetRotation({ 45, 45, 0 });
+    }
+    {
+        auto pObject = pCtx->CreateRenderableObject();
+        auto pTexture = TTextureFactory::Load("wood.png");
+        auto pMesh = CreateCube();
+
+        pObject->SetTexture(pTexture);
+        pObject->SetMesh(pMesh);
+
+        pObject->SetPosition({ -1, 1, 5 });
+        pObject->SetRotation({ 45, 45, 0 });
+    }
+    {
+        auto pObject = pCtx->CreateRenderableObject();
+        auto pTexture = TTextureFactory::Load("hole.jpg");
+        auto pMesh = CreateCube();
+
+        pObject->SetTexture(pTexture);
+        pObject->SetMesh(pMesh);
+
+        pObject->SetPosition({ 1, 1, 5 });
+        pObject->SetRotation({ 45, 45, 0 });
+    }
+}
+
+int main(int argc, char** argv)
+{
+    TGraphicEngine ge;
+
+    auto initResult = ge.Init();
+    if (!initResult) {
+        return 1;
+    }
+
+    ge.SetTitle("MMO-Framework");
+    ge.SetPosition(100, 100);
+    ge.SetSize(W, H);
+
+    CreateContext0(ge);
+    CreateContext1(ge);
+
+    int cameraIndex = 0;
+
     while (true) {
+        auto w = ge.GetWidth();
+        auto h = ge.GetHeight();
+
+        pCamera[0]->SetWindowPosition({ 0 , 0 });
+        pCamera[0]->SetWindowSize({ w / 2 , h / 2 });
+
+        pCamera[1]->SetWindowPosition({ w / 2 , 0 });
+        pCamera[1]->SetWindowSize({ w / 2 , h / 2 });
+
+        pCamera[2]->SetWindowPosition({ 0 , h / 2 });
+        pCamera[2]->SetWindowSize({ w / 2 , h / 2 });
+
+        pCamera[3]->SetWindowPosition({ w / 2 , h / 2 });
+        pCamera[3]->SetWindowSize({ w / 2 , h / 2 });
+
         auto workResult = ge.GenerateInputEvents();
         if (!workResult) {
             break;
@@ -145,9 +236,11 @@ int main(int argc, char** argv)
         const float X_MULTI = -0.002f;
         const float Y_MULTI = 0.002f;
 
+        auto pC = pCamera[cameraIndex];
+
         if (kmc->mouseButtonState[(int)MouseButton::LEFT]) {
             for (auto& mm : kmc->mouseMotionEvents) {
-                pCamera->AddRotation({ mm.yrel * Y_MULTI, mm.xrel * X_MULTI, 0 });
+                pC->AddRotation({ mm.yrel * Y_MULTI, mm.xrel * X_MULTI, 0 });
             }
         }
 
@@ -158,22 +251,27 @@ int main(int argc, char** argv)
             }
 
             if (key.keyCode == KeyCodes::W) {
-                pCamera->AddPosition({0,0,0.05});
+                pC->MoveForward(0.05f);
             }
             if (key.keyCode == KeyCodes::S) {
-                pCamera->AddPosition({ 0,0, -0.05 });
+                pC->MoveForward(-0.05f);
             }
             if (key.keyCode == KeyCodes::A) {
-                pCamera->AddPosition({ 0.05,0,0 });
+                pC->MoveRight(0.05f);
             }
             if (key.keyCode == KeyCodes::D) {
-                pCamera->AddPosition({ -0.05,0, 0 });
+                pC->MoveRight(-0.05f);
             }
             if (key.keyCode == KeyCodes::Q) {
-                pCamera->AddPosition({ 0,-0.05,0 });
+                pC->MoveUp(-0.05f);
             }
             if (key.keyCode == KeyCodes::E) {
-                pCamera->AddPosition({ 0, 0.05, 0 });
+                pC->MoveUp(0.05f);
+            }
+
+            if (key.keyCode == KeyCodes::T) {
+                cameraIndex++;
+                cameraIndex %= CAMERA_COUNT;
             }
         }
 

@@ -15,7 +15,7 @@ bool TSdl2Application::Init()
         return false;
     }
 
-    auto windowFlag = SDL_WINDOW_OPENGL | SDL_WINDOW_SHOWN | SDL_WINDOW_RESIZABLE;
+    auto windowFlag = SDL_WINDOW_OPENGL | SDL_WINDOW_SHOWN | SDL_WINDOW_RESIZABLE | SDL_WINDOW_ALLOW_HIGHDPI;
     std::string title = "";
     int x = 0;
     int y = 0;
@@ -152,5 +152,15 @@ const std::string TSdl2Application::GetLastError() const
 const TKeyMouseEventContainer* TSdl2Application::GetKeyMouseContainer() const
 {
     return &mKeyMouseEventContainer;
+}
+//-------------------------------------------------------------------------------
+SDL_GLContext TSdl2Application::GetSdlCtx() const
+{
+    return mCtx;
+}
+//-------------------------------------------------------------------------------
+SDL_Window* TSdl2Application::GetSdlWindow() const
+{
+    return mWindow;
 }
 //-------------------------------------------------------------------------------

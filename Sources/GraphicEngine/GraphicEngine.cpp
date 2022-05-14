@@ -31,12 +31,11 @@ void TGraphicEngine::Render()
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
     for (auto& ctx : mContexts) {
-        ctx->Work();
+        ctx->Render();
     }
 }
 //---------------------------------------------------------------------
-void TGraphicEngine::ApplyInputEventsToGui(const std::list<SDL_Event>& events,
-    std::list<SDL_Event>& unusedEvents)
+void TGraphicEngine::ApplyInputEventsToGui(const std::list<SDL_Event>& events, std::list<SDL_Event>& unusedEvents)
 {
     bool isApplyEventsByActive = false;
     std::list<SDL_Event> allUnusedEvents;

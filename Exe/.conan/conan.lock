@@ -2,13 +2,12 @@
  "graph_lock": {
   "nodes": {
    "0": {
-    "options": "glad:extensions=''\nglad:gl_profile=compatibility\nglad:gl_version=3.3\nglad:gles1_version=None\nglad:gles2_version=None\nglad:glsc2_version=None\nglad:no_loader=False\nglad:shared=False\nglad:spec=gl\nimgui:shared=False\nsdl:directx=True\nsdl:opengl=True\nsdl:opengles=True\nsdl:sdl2main=True\nsdl:shared=False\nsdl:vulkan=True",
+    "options": "glad:extensions=''\nglad:gl_profile=compatibility\nglad:gl_version=3.3\nglad:gles1_version=None\nglad:gles2_version=None\nglad:glsc2_version=None\nglad:no_loader=False\nglad:shared=False\nglad:spec=gl\nsdl:directx=True\nsdl:opengl=True\nsdl:opengles=True\nsdl:sdl2main=True\nsdl:shared=False\nsdl:vulkan=True",
     "requires": [
      "1",
      "2",
      "3",
-     "4",
-     "5"
+     "4"
     ],
     "path": "..\\..\\conanfile.txt",
     "context": "host"
@@ -38,13 +37,6 @@
     "ref": "glm/0.9.9.8",
     "options": "",
     "package_id": "5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9",
-    "prev": "0",
-    "context": "host"
-   },
-   "5": {
-    "ref": "imgui/cci.20220207+1.87.docking",
-    "options": "shared=False",
-    "package_id": "d057732059ea44a47760900cb5e4855d2bea8714",
     "prev": "0",
     "context": "host"
    }

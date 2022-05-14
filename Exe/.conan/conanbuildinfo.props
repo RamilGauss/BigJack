@@ -7,7 +7,6 @@
     <Conan-stb-Root>$(USERPROFILE)\.conan\data\stb\20200203\_\_\package\5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9</Conan-stb-Root>
     <Conan-glad-Root>$(USERPROFILE)\.conan\data\glad\0.1.35\_\_\package\07b3a6a6cf6872693cd25f3ba34045fb28115ad7</Conan-glad-Root>
     <Conan-glm-Root>$(USERPROFILE)\.conan\data\glm\0.9.9.8\_\_\package\5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9</Conan-glm-Root>
-    <Conan-imgui-Root>$(USERPROFILE)\.conan\data\imgui\cci.20220207+1.87.docking\_\_\package\d057732059ea44a47760900cb5e4855d2bea8714</Conan-imgui-Root>
   </PropertyGroup>
   <PropertyGroup Label="ConanVariables">
     <ConanPackageName></ConanPackageName>
@@ -15,15 +14,15 @@
     <ConanCompilerFlags></ConanCompilerFlags>
     <ConanLinkerFlags></ConanLinkerFlags>
     <ConanPreprocessorDefinitions>STB_TEXTEDIT_KEYTYPE=unsigned;</ConanPreprocessorDefinitions>
-    <ConanIncludeDirectories>$(USERPROFILE)\.conan\data\sdl\2.0.20\_\_\package\39380f4f7a6ed9bd408fbb5f7be4eb5c380f5a26\include;$(USERPROFILE)\.conan\data\sdl\2.0.20\_\_\package\39380f4f7a6ed9bd408fbb5f7be4eb5c380f5a26\include\SDL2;$(USERPROFILE)\.conan\data\stb\20200203\_\_\package\5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9\include;$(USERPROFILE)\.conan\data\glad\0.1.35\_\_\package\07b3a6a6cf6872693cd25f3ba34045fb28115ad7\include;$(USERPROFILE)\.conan\data\glm\0.9.9.8\_\_\package\5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9\include;$(USERPROFILE)\.conan\data\imgui\cci.20220207+1.87.docking\_\_\package\d057732059ea44a47760900cb5e4855d2bea8714\include;</ConanIncludeDirectories>
-    <ConanResourceDirectories>$(USERPROFILE)\.conan\data\imgui\cci.20220207+1.87.docking\_\_\package\d057732059ea44a47760900cb5e4855d2bea8714\res;</ConanResourceDirectories>
-    <ConanLibraryDirectories>$(USERPROFILE)\.conan\data\sdl\2.0.20\_\_\package\39380f4f7a6ed9bd408fbb5f7be4eb5c380f5a26\lib;$(USERPROFILE)\.conan\data\glad\0.1.35\_\_\package\07b3a6a6cf6872693cd25f3ba34045fb28115ad7\lib;$(USERPROFILE)\.conan\data\imgui\cci.20220207+1.87.docking\_\_\package\d057732059ea44a47760900cb5e4855d2bea8714\lib;</ConanLibraryDirectories>
-    <ConanBinaryDirectories>$(USERPROFILE)\.conan\data\imgui\cci.20220207+1.87.docking\_\_\package\d057732059ea44a47760900cb5e4855d2bea8714\bin;</ConanBinaryDirectories>
-    <ConanLibraries>SDL2maind.lib;SDL2d.lib;glad.lib;imgui.lib;</ConanLibraries>
+    <ConanIncludeDirectories>$(USERPROFILE)\.conan\data\sdl\2.0.20\_\_\package\39380f4f7a6ed9bd408fbb5f7be4eb5c380f5a26\include;$(USERPROFILE)\.conan\data\sdl\2.0.20\_\_\package\39380f4f7a6ed9bd408fbb5f7be4eb5c380f5a26\include\SDL2;$(USERPROFILE)\.conan\data\stb\20200203\_\_\package\5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9\include;$(USERPROFILE)\.conan\data\glad\0.1.35\_\_\package\07b3a6a6cf6872693cd25f3ba34045fb28115ad7\include;$(USERPROFILE)\.conan\data\glm\0.9.9.8\_\_\package\5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9\include;</ConanIncludeDirectories>
+    <ConanResourceDirectories></ConanResourceDirectories>
+    <ConanLibraryDirectories>$(USERPROFILE)\.conan\data\sdl\2.0.20\_\_\package\39380f4f7a6ed9bd408fbb5f7be4eb5c380f5a26\lib;$(USERPROFILE)\.conan\data\glad\0.1.35\_\_\package\07b3a6a6cf6872693cd25f3ba34045fb28115ad7\lib;</ConanLibraryDirectories>
+    <ConanBinaryDirectories></ConanBinaryDirectories>
+    <ConanLibraries>SDL2maind.lib;SDL2d.lib;glad.lib;</ConanLibraries>
     <ConanSystemDeps>user32.lib;gdi32.lib;winmm.lib;imm32.lib;ole32.lib;oleaut32.lib;version.lib;uuid.lib;advapi32.lib;setupapi.lib;shell32.lib;</ConanSystemDeps>
   </PropertyGroup>
   <PropertyGroup>
-    <LocalDebuggerEnvironment>PATH=%PATH%;$(USERPROFILE)\.conan\data\imgui\cci.20220207+1.87.docking\_\_\package\d057732059ea44a47760900cb5e4855d2bea8714\bin;</LocalDebuggerEnvironment>
+    <LocalDebuggerEnvironment>PATH=%PATH%;</LocalDebuggerEnvironment>
     <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
   </PropertyGroup>
   <ItemDefinitionGroup>

@@ -4,31 +4,27 @@ C:/Users/Gauss/.conan/data/sdl/2.0.20/_/_/package/39380f4f7a6ed9bd408fbb5f7be4eb
 C:/Users/Gauss/.conan/data/stb/20200203/_/_/package/5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9/include
 C:/Users/Gauss/.conan/data/glad/0.1.35/_/_/package/07b3a6a6cf6872693cd25f3ba34045fb28115ad7/include
 C:/Users/Gauss/.conan/data/glm/0.9.9.8/_/_/package/5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9/include
-C:/Users/Gauss/.conan/data/imgui/cci.20220207+1.87.docking/_/_/package/d057732059ea44a47760900cb5e4855d2bea8714/include
 
 [libdirs]
 C:/Users/Gauss/.conan/data/sdl/2.0.20/_/_/package/39380f4f7a6ed9bd408fbb5f7be4eb5c380f5a26/lib
 C:/Users/Gauss/.conan/data/glad/0.1.35/_/_/package/07b3a6a6cf6872693cd25f3ba34045fb28115ad7/lib
-C:/Users/Gauss/.conan/data/imgui/cci.20220207+1.87.docking/_/_/package/d057732059ea44a47760900cb5e4855d2bea8714/lib
 
 [bindirs]
-C:/Users/Gauss/.conan/data/imgui/cci.20220207+1.87.docking/_/_/package/d057732059ea44a47760900cb5e4855d2bea8714/bin
+
 
 [resdirs]
-C:/Users/Gauss/.conan/data/imgui/cci.20220207+1.87.docking/_/_/package/d057732059ea44a47760900cb5e4855d2bea8714/res
+
 
 [builddirs]
 C:/Users/Gauss/.conan/data/sdl/2.0.20/_/_/package/39380f4f7a6ed9bd408fbb5f7be4eb5c380f5a26/
 C:/Users/Gauss/.conan/data/stb/20200203/_/_/package/5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9/
 C:/Users/Gauss/.conan/data/glad/0.1.35/_/_/package/07b3a6a6cf6872693cd25f3ba34045fb28115ad7/
 C:/Users/Gauss/.conan/data/glm/0.9.9.8/_/_/package/5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9/
-C:/Users/Gauss/.conan/data/imgui/cci.20220207+1.87.docking/_/_/package/d057732059ea44a47760900cb5e4855d2bea8714/
 
 [libs]
 SDL2maind
 SDL2d
 glad
-imgui
 
 [system_libs]
 user32
@@ -340,78 +336,11 @@ glm
 
 
 
-[includedirs_imgui]
-C:/Users/Gauss/.conan/data/imgui/cci.20220207+1.87.docking/_/_/package/d057732059ea44a47760900cb5e4855d2bea8714/include
-
-[libdirs_imgui]
-C:/Users/Gauss/.conan/data/imgui/cci.20220207+1.87.docking/_/_/package/d057732059ea44a47760900cb5e4855d2bea8714/lib
-
-[bindirs_imgui]
-C:/Users/Gauss/.conan/data/imgui/cci.20220207+1.87.docking/_/_/package/d057732059ea44a47760900cb5e4855d2bea8714/bin
-
-[resdirs_imgui]
-C:/Users/Gauss/.conan/data/imgui/cci.20220207+1.87.docking/_/_/package/d057732059ea44a47760900cb5e4855d2bea8714/res
-
-[builddirs_imgui]
-C:/Users/Gauss/.conan/data/imgui/cci.20220207+1.87.docking/_/_/package/d057732059ea44a47760900cb5e4855d2bea8714/
-
-[libs_imgui]
-imgui
-
-[system_libs_imgui]
-
-
-[defines_imgui]
-
-
-[cppflags_imgui]
-
-
-[cxxflags_imgui]
-
-
-[cflags_imgui]
-
-
-[sharedlinkflags_imgui]
-
-
-[exelinkflags_imgui]
-
-
-[sysroot_imgui]
-
-
-[frameworks_imgui]
-
-
-[frameworkdirs_imgui]
-
-
-[rootpath_imgui]
-C:/Users/Gauss/.conan/data/imgui/cci.20220207+1.87.docking/_/_/package/d057732059ea44a47760900cb5e4855d2bea8714
-
-[name_imgui]
-imgui
-
-[version_imgui]
-cci.20220207+1.87.docking
-
-[generatornames_imgui]
-
-
-[generatorfilenames_imgui]
-
-
-
 [USER_glad]
 [USER_glm]
-[USER_imgui]
 [USER_sdl]
 [USER_stb]
 [ENV_sdl]
 [ENV_stb]
 [ENV_glad]
 [ENV_glm]
-[ENV_imgui]
-PATH=["C:\Users\Gauss\.conan\data\imgui\cci.20220207+1.87.docking\_\_\package\d057732059ea44a47760900cb5e4855d2bea8714\bin"]

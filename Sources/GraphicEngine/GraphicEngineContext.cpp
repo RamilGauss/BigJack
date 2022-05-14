@@ -11,11 +11,13 @@ See for more information LICENSE.md.
 
 using namespace nsGraphicEngine;
 
-void TGraphicEngineContext::Init(nsGraphicEngine::TGraphicEngine* pGE)
+void TGraphicEngineContext::Init(TGraphicEngine* pGE)
 {
     mGE = pGE;
 
     mRenderableObjectShader = CreateRenderableObjectShader();
+
+    mImGuiContext.Init(pGE->GetSdlWindow(), pGE->GetSdlCtx());
 }
 //--------------------------------------------------------------------------------------------
 TGraphicEngineContext::~TGraphicEngineContext()
@@ -38,14 +40,10 @@ TShader* TGraphicEngineContext::CreateRenderableObjectShader()
     return pShader;
 }
 //--------------------------------------------------------------------------------------------
-void TGraphicEngineContext::Work()
+void TGraphicEngineContext::Render()
 {
     // Draw all renderable objects
-    const auto SCR_WIDTH = mGE->GetWidth();
-    const auto SCR_HEIGHT = mGE->GetHeight();
-
     mRenderableObjectShader->MakeCurrentInConveyer();
-
     mRenderableObjectShader->SetInt("texture1", 0);
 
     for (auto& camera : mCameras) {
@@ -68,16 +66,12 @@ void TGraphicEngineContext::Work()
         }
     }
     // Draw Gui
-}
-//--------------------------------------------------------------------------------------------
-void TGraphicEngineContext::AddRender(nsGraphicEngine::IRenderable* pRenderable)
-{
+    if (mGuiCamera) {
+        auto winSize = mGuiCamera->GetWindowSize();
+        auto winPos = mGuiCamera->GetWindowPosition();
 
-}
-//--------------------------------------------------------------------------------------------
-void TGraphicEngineContext::RemoveRender(nsGraphicEngine::IRenderable* pRenderable)
-{
-
+        mImGuiContext.Render(winSize.x, winSize.y);
+    }
 }
 //--------------------------------------------------------------------------------------------
 TCamera* TGraphicEngineContext::CreateCamera()
@@ -116,9 +110,34 @@ void TGraphicEngineContext::DestroyLight(TLight* pLight)
 
 }
 //--------------------------------------------------------------------------------------------
-void TGraphicEngineContext::HandleEvents(const std::list<SDL_Event>& events,
-    std::list<SDL_Event>& unusedEvents)
+void TGraphicEngineContext::HandleEvents(const std::list<SDL_Event>& events, std::list<SDL_Event>& unusedEvents)
 {
-    unusedEvents = events;
+    if (mGuiCamera) {
+        auto pos = mGuiCamera->GetWindowPosition();
+
+        mImGuiContext.HandleEvents(events, unusedEvents, pos.x, pos.y);
+    } else {
+        unusedEvents = events;
+    }
+}
+//--------------------------------------------------------------------------------------------
+void TGraphicEngineContext::SetGuiCamera(TCamera* pCamera)
+{
+    mGuiCamera = pCamera;
+}
+//--------------------------------------------------------------------------------------------
+TCamera* TGraphicEngineContext::GetGuiCamera() const
+{
+    return mGuiCamera;
+}
+//--------------------------------------------------------------------------------------------
+void TGraphicEngineContext::AddRender(IRenderable* pRenderable)
+{
+    mImGuiContext.AddRender(pRenderable);
+}
+//--------------------------------------------------------------------------------------------
+void TGraphicEngineContext::RemoveRender(IRenderable* pRenderable)
+{
+    mImGuiContext.RemoveRender(pRenderable);
 }
 //--------------------------------------------------------------------------------------------

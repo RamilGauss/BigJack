@@ -45,6 +45,18 @@ namespace nsGraphicEngine
 
         void AddPosition(const glm::vec3& pos);
         void AddRotation(const glm::vec3& angles);
+
+        glm::vec3 GetPosition() const;
+        glm::vec3 GetRotation() const;
+
+        void MoveForward(float value);
+        void MoveRight(float value);
+        void MoveUp(float value);
+
+    protected:
+        glm::vec3 GetForward() const;
+        glm::vec3 GetUp() const;
+        glm::vec3 GetRight() const;
     };
 }
 
