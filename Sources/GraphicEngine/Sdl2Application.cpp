@@ -16,12 +16,7 @@ bool TSdl2Application::Init()
     }
 
     auto windowFlag = SDL_WINDOW_OPENGL | SDL_WINDOW_SHOWN | SDL_WINDOW_RESIZABLE | SDL_WINDOW_ALLOW_HIGHDPI;
-    std::string title = "";
-    int x = 0;
-    int y = 0;
-    int width = 800;
-    int height = 600;
-    mWindow = SDL_CreateWindow(title.c_str(), x, y, width, height, windowFlag);
+    mWindow = SDL_CreateWindow(mTitle.c_str(), mX, mY, mWidth, mHeight, windowFlag);
 
     auto rendererFlag = SDL_RENDERER_ACCELERATED | SDL_RENDERER_TARGETTEXTURE;
     mRenderer = SDL_CreateRenderer(mWindow, -1, rendererFlag);
@@ -48,16 +43,24 @@ bool TSdl2Application::Init()
 void TSdl2Application::SetTitle(const std::string& title)
 {
     SDL_SetWindowTitle(mWindow, title.c_str());
+
+    mTitle = title;
 }
 //-------------------------------------------------------------------------------
 void TSdl2Application::SetSize(int width, int height)
 {
     SDL_SetWindowSize(mWindow, width, height);
+
+    mWidth = width;
+    mHeight = height;
 }
 //-------------------------------------------------------------------------------
 void TSdl2Application::SetPosition(int x, int y)
 {
     SDL_SetWindowPosition(mWindow, x, y);
+
+    mX = x;
+    mY = y;
 }
 //-------------------------------------------------------------------------------
 const std::string TSdl2Application::GetTitle()

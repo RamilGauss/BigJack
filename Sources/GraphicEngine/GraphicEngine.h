@@ -26,7 +26,9 @@ namespace nsGraphicEngine
     public:
         enum class PipeLineType
         {
-            SIMPLE
+            SIMPLE, 
+            LIGHT,
+            HDR,
         };
 
         TGraphicEngineContext* CreateContext(PipeLineType pipeLineType);

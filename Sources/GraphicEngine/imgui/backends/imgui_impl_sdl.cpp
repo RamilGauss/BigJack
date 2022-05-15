@@ -687,7 +687,9 @@ void ImGui_ImplSDL2_NewFrame(const ImVec2& renderSize)
         io.AddMousePosEvent(-FLT_MAX, -FLT_MAX);
     }
 
-    ImGui_ImplSDL2_UpdateMouseData();
+    // Gauss 2022.05.15
+    // Вот уж точно messy code. Что-то скрытно работает, хотя снаружи задаются события SDL. Очень грязный код.
+    //### ImGui_ImplSDL2_UpdateMouseData();
     ImGui_ImplSDL2_UpdateMouseCursor();
 
     // Update game controllers (if enabled and available)

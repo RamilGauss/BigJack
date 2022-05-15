@@ -30,7 +30,8 @@ using namespace nsGraphicEngine;
 
 TCamera* pCamera[CAMERA_COUNT];
 
-TGuiDemo g_GuiDemo;
+TGuiDemo g_GuiDemo0;
+TGuiDemo g_GuiDemo1;
 
 TMesh* CreateCube()
 {
@@ -85,7 +86,7 @@ void CreateContext0(TGraphicEngine& ge)
 {
     auto pCtx = ge.CreateContext(TGraphicEngine::PipeLineType::SIMPLE);
 
-    pCtx->AddRender(&g_GuiDemo);
+    pCtx->AddRender(&g_GuiDemo0);
 
     pCamera[0] = pCtx->CreateCamera();
     pCamera[0]->SetPosition({ 0, 0, 0 });
@@ -141,12 +142,14 @@ void CreateContext0(TGraphicEngine& ge)
         pObject->SetRotation({ 45, 45, 0 });
     }
 
-    pCtx->SetGuiCamera(pCamera[0]);
+    pCtx->SetGuiCamera(pCamera[1]);
 }
 
 void CreateContext1(TGraphicEngine& ge)
 {
     auto pCtx = ge.CreateContext(TGraphicEngine::PipeLineType::SIMPLE);
+
+    pCtx->AddRender(&g_GuiDemo1);
 
     pCamera[2] = pCtx->CreateCamera();
     pCamera[2]->SetPosition({ 0, 0, 0 });
@@ -190,20 +193,22 @@ void CreateContext1(TGraphicEngine& ge)
         pObject->SetPosition({ 1, 1, 5 });
         pObject->SetRotation({ 45, 45, 0 });
     }
+
+    pCtx->SetGuiCamera(pCamera[3]);
 }
 
 int main(int argc, char** argv)
 {
     TGraphicEngine ge;
 
+    ge.SetTitle("BigJack");
+    ge.SetPosition(100, 100);
+    ge.SetSize(W, H);
+
     auto initResult = ge.Init();
     if (!initResult) {
         return 1;
     }
-
-    ge.SetTitle("MMO-Framework");
-    ge.SetPosition(100, 100);
-    ge.SetSize(W, H);
 
     CreateContext0(ge);
     CreateContext1(ge);

@@ -25,6 +25,13 @@ namespace nsGraphicEngine
 
         TKeyMouseEventHandler mKeyMouseEventHandler;
         TKeyMouseEventContainer mKeyMouseEventContainer;
+
+        std::string mTitle;
+        int mWidth = 800;
+        int mHeight = 600;
+        int mX = 0;
+        int mY = 0;
+
     public:
         virtual ~TSdl2Application() {}
 

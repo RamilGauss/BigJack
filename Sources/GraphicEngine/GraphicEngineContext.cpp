@@ -42,6 +42,8 @@ TShader* TGraphicEngineContext::CreateRenderableObjectShader()
 //--------------------------------------------------------------------------------------------
 void TGraphicEngineContext::Render()
 {
+    auto windowHeight = mGE->GetHeight();
+
     // Draw all renderable objects
     mRenderableObjectShader->MakeCurrentInConveyer();
     mRenderableObjectShader->SetInt("texture1", 0);
@@ -51,7 +53,8 @@ void TGraphicEngineContext::Render()
         auto winSize = camera->GetWindowSize();
         auto winPos = camera->GetWindowPosition();
 
-        glViewport(winPos.x, winPos.y, winSize.x, winSize.y);
+        // In OpenGL a lower left corner has (0,0), in BigJack a top left corner has (0,0)
+        glViewport(winPos.x, windowHeight - winSize.y - winPos.y, winSize.x, winSize.y);// TODO Window size.y - winPos.y!!!
 
         glm::mat4 view = camera->GetMatrix();
         glm::mat4 projection = glm::perspective(glm::radians(camera->GetZoom()), winSize.x / winSize.y, 0.1f, 100.0f);
@@ -70,7 +73,7 @@ void TGraphicEngineContext::Render()
         auto winSize = mGuiCamera->GetWindowSize();
         auto winPos = mGuiCamera->GetWindowPosition();
 
-        mImGuiContext.Render(winSize.x, winSize.y);
+        mImGuiContext.Render(winPos.x, windowHeight - winSize.y - winPos.y, winSize.x, winSize.y);
     }
 }
 //--------------------------------------------------------------------------------------------
