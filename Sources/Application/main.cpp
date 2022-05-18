@@ -24,7 +24,7 @@ See for more information LICENSE.md.
 const int W = 1024;
 const int H = 800;
 
-const int CAMERA_COUNT = 4;
+const int CAMERA_COUNT = 6;
 
 using namespace nsGraphicEngine;
 
@@ -82,21 +82,25 @@ TMesh* CreateCube()
     return pMesh;
 }
 
-void CreateContext0(TGraphicEngine& ge)
+void CreateContext0(TGraphicEngine& ge, int offset)
 {
     auto pCtx = ge.CreateContext(TGraphicEngine::PipeLineType::SIMPLE);
 
     pCtx->AddRender(&g_GuiDemo0);
 
-    pCamera[0] = pCtx->CreateCamera();
-    pCamera[0]->SetPosition({ 0, 0, 0 });
-    pCamera[0]->SetWindowPosition({ 0 , 0 });
-    pCamera[0]->SetWindowSize({ W / 2 , H / 2 });
+    pCamera[offset + 0] = pCtx->CreateCamera();
+    pCamera[offset + 0]->SetPosition({ 0, 0, 0 });
+    pCamera[offset + 0]->SetWindowPosition({ 0 , 0 });
+    pCamera[offset + 0]->SetWindowSize({ W / 2 , H / 2 });
 
-    pCamera[1] = pCtx->CreateCamera();
-    pCamera[1]->SetPosition({ 0, 0, 0 });
-    pCamera[1]->SetWindowPosition({ W / 2 , 0 });
-    pCamera[1]->SetWindowSize({ W / 2 , H / 2 });
+    pCamera[offset + 1] = pCtx->CreateCamera();
+    pCamera[offset + 1]->SetPosition({ 0, 0, 0 });
+    pCamera[offset + 1]->SetWindowPosition({ W / 2 , 0 });
+    pCamera[offset + 1]->SetWindowSize({ W / 2 , H / 2 });
+
+    pCamera[offset + 2] = pCtx->CreateCamera();
+    pCamera[offset + 2]->SetTextureSize({ W, H });
+    pCamera[offset + 2]->SetPosition({ 0, 0, 0 });
     {
         auto pObject = pCtx->CreateRenderableObject();
         auto pTexture = TTextureFactory::Load("stone.tga");
@@ -142,24 +146,28 @@ void CreateContext0(TGraphicEngine& ge)
         pObject->SetRotation({ 45, 45, 0 });
     }
 
-    pCtx->SetGuiCamera(pCamera[1]);
+    pCtx->SetGuiCamera(pCamera[offset + 0]);
 }
 
-void CreateContext1(TGraphicEngine& ge)
+void CreateContext1(TGraphicEngine& ge, int offset)
 {
     auto pCtx = ge.CreateContext(TGraphicEngine::PipeLineType::SIMPLE);
 
     pCtx->AddRender(&g_GuiDemo1);
 
-    pCamera[2] = pCtx->CreateCamera();
-    pCamera[2]->SetPosition({ 0, 0, 0 });
-    pCamera[2]->SetWindowPosition({ 0 , H / 2 });
-    pCamera[2]->SetWindowSize({ W / 2 , H / 2 });
+    pCamera[offset + 0] = pCtx->CreateCamera();
+    pCamera[offset + 0]->SetPosition({ 0, 0, 0 });
+    pCamera[offset + 0]->SetWindowPosition({ 0 , H / 2 });
+    pCamera[offset + 0]->SetWindowSize({ W / 2 , H / 2 });
 
-    pCamera[3] = pCtx->CreateCamera();
-    pCamera[3]->SetPosition({ 0, 0, 0 });
-    pCamera[3]->SetWindowPosition({ W / 2 , H / 2 });
-    pCamera[3]->SetWindowSize({ W / 2 , H / 2 });
+    pCamera[offset + 1] = pCtx->CreateCamera();
+    pCamera[offset + 1]->SetPosition({ 0, 0, 0 });
+    pCamera[offset + 1]->SetWindowPosition({ W / 2 , H / 2 });
+    pCamera[offset + 1]->SetWindowSize({ W / 2 , H / 2 });
+
+    pCamera[offset + 2] = pCtx->CreateCamera();
+    pCamera[offset + 2]->SetTextureSize({ W, H });
+    pCamera[offset + 2]->SetPosition({ 0, 0, 0 });
     {
         auto pObject = pCtx->CreateRenderableObject();
         auto pTexture = TTextureFactory::Load("stone.tga");
@@ -194,7 +202,7 @@ void CreateContext1(TGraphicEngine& ge)
         pObject->SetRotation({ 45, 45, 0 });
     }
 
-    pCtx->SetGuiCamera(pCamera[3]);
+    pCtx->SetGuiCamera(pCamera[offset + 1]);
 }
 
 int main(int argc, char** argv)
@@ -210,8 +218,11 @@ int main(int argc, char** argv)
         return 1;
     }
 
-    CreateContext0(ge);
-    CreateContext1(ge);
+    CreateContext0(ge, 0);
+    CreateContext1(ge, 3);
+
+    g_GuiDemo0.SetTexture(pCamera[5]->GetRenderedTexture());
+    g_GuiDemo1.SetTexture(pCamera[2]->GetRenderedTexture());
 
     int cameraIndex = 0;
 
@@ -225,11 +236,11 @@ int main(int argc, char** argv)
         pCamera[1]->SetWindowPosition({ w / 2 , 0 });
         pCamera[1]->SetWindowSize({ w / 2 , h / 2 });
 
-        pCamera[2]->SetWindowPosition({ 0 , h / 2 });
-        pCamera[2]->SetWindowSize({ w / 2 , h / 2 });
-
-        pCamera[3]->SetWindowPosition({ w / 2 , h / 2 });
+        pCamera[3]->SetWindowPosition({ 0 , h / 2 });
         pCamera[3]->SetWindowSize({ w / 2 , h / 2 });
+
+        pCamera[4]->SetWindowPosition({ w / 2 , h / 2 });
+        pCamera[4]->SetWindowSize({ w / 2 , h / 2 });
 
         auto workResult = ge.GenerateInputEvents();
         if (!workResult) {
@@ -279,6 +290,9 @@ int main(int argc, char** argv)
                 cameraIndex %= CAMERA_COUNT;
             }
         }
+
+        g_GuiDemo0.SetCameraIndex(cameraIndex);
+        g_GuiDemo1.SetCameraIndex(cameraIndex);
 
         ge.Draw();
     }

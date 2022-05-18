@@ -20,6 +20,8 @@ See for more information LICENSE.md.
 
 namespace nsGraphicEngine
 {
+    class TTexture;
+
     class DllExport TCamera
     {
         glm::vec3 mPosition = glm::vec3(0.0f, 0.0f, 0.0f);
@@ -29,7 +31,22 @@ namespace nsGraphicEngine
         glm::vec2 mWindowPosition = glm::vec2(0.0f, 0.0f);
 
         float mZoom = 45.0f;
+
+        float mNear = 0.1f;
+        float mFar = 100.0f;
+
+        unsigned int mFrameBuffer = -1;
+        unsigned int mRenderBufferForDepthStensilTest = -1;
+
+        TTexture* mTexture = nullptr;
+
     public:
+        void SetTextureSize(const glm::vec2& textureSize);
+        const TTexture* GetRenderedTexture() const;
+
+        void Begin();
+        void End();
+
         void SetZoom(float value);
         void SetWindowSize(const glm::vec2& value);
         void SetWindowPosition(const glm::vec2& value);
@@ -38,7 +55,8 @@ namespace nsGraphicEngine
         const glm::vec2 GetWindowSize() const;
         const glm::vec2 GetWindowPosition() const;
 
-        glm::mat4 GetMatrix() const;
+        glm::mat4 GetViewMatrix() const;
+        glm::mat4 GetProjectionMatrix() const;
 
         void SetPosition(const glm::vec3& pos);
         void SetRotation(const glm::vec3& angles);
@@ -53,6 +71,7 @@ namespace nsGraphicEngine
         void MoveRight(float value);
         void MoveUp(float value);
 
+        virtual ~TCamera();
     protected:
         glm::vec3 GetForward() const;
         glm::vec3 GetUp() const;

@@ -18,6 +18,8 @@ namespace nsGraphicEngine
         int mHeight = 0;
         int mBpp = 0;
 
+        unsigned int mId = 0;
+
         unsigned char* mData = nullptr;
 
         unsigned int GetSize() const;

@@ -10,15 +10,20 @@ See for more information LICENSE.md.
 #include "IRenderable.h"
 
 #include "imgui.h"
+#include <Texture.h>
+#include <TextureFactory.h>
 
 class TGuiDemo : public nsGraphicEngine::IRenderable
 {
-    bool show_demo_window = true;
-    bool show_another_window = false;
-    ImVec4 clear_color = ImVec4(0.45f, 0.55f, 0.60f, 1.00f);
+    const nsGraphicEngine::TTexture* mTexture = nullptr;
 
-    float f = 0.0f;
-    int counter = 0;
+    int mCameraIndex = 0;
 public:
+    void Load(const std::string& path);
+
+    void SetTexture(const nsGraphicEngine::TTexture* pTexture);
+
     void Render() override;
+
+    void SetCameraIndex(int value);
 };

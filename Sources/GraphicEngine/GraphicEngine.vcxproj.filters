@@ -13,18 +13,11 @@
     <Filter Include="Context">
       <UniqueIdentifier>{58795fed-c6d6-43a9-acce-f37e46f2365d}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Stuff">
-      <UniqueIdentifier>{07150132-a138-412f-93da-005eaa21f10e}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Trash">
       <UniqueIdentifier>{2f209f00-9541-4823-a151-5cd7058fbf53}</UniqueIdentifier>
     </Filter>
     <Filter Include="Gui">
       <UniqueIdentifier>{088f8976-2e59-4cdd-bbe7-b0efd3bbf8e9}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Surface">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
     </Filter>
     <Filter Include="Events">
       <UniqueIdentifier>{10c30f93-0c92-4f9e-8e9f-bad790120c06}</UniqueIdentifier>
@@ -35,20 +28,14 @@
     <Filter Include="Dear ImGui\backend">
       <UniqueIdentifier>{4cdfbfed-a9d0-49f1-9d52-e9227a7b0621}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Factory">
+      <UniqueIdentifier>{07150132-a138-412f-93da-005eaa21f10e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="..\..\conanfile.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="IRenderableSurface.h">
-      <Filter>Surface</Filter>
-    </ClInclude>
-    <ClInclude Include="CameraSurface.h">
-      <Filter>Surface</Filter>
-    </ClInclude>
-    <ClInclude Include="TextureSurface.h">
-      <Filter>Surface</Filter>
-    </ClInclude>
     <ClInclude Include="GraphicEngine.h">
       <Filter>Engine</Filter>
     </ClInclude>
@@ -80,13 +67,13 @@
       <Filter>Units\Object</Filter>
     </ClInclude>
     <ClInclude Include="ShaderFactory.h">
-      <Filter>Stuff</Filter>
+      <Filter>Factory</Filter>
     </ClInclude>
     <ClInclude Include="TextureFactory.h">
-      <Filter>Stuff</Filter>
+      <Filter>Factory</Filter>
     </ClInclude>
     <ClInclude Include="MeshFactory.h">
-      <Filter>Stuff</Filter>
+      <Filter>Factory</Filter>
     </ClInclude>
     <ClInclude Include="Shader.h">
       <Filter>Units\Object</Filter>
@@ -163,13 +150,13 @@
       <Filter>Units</Filter>
     </ClCompile>
     <ClCompile Include="ShaderFactory.cpp">
-      <Filter>Stuff</Filter>
+      <Filter>Factory</Filter>
     </ClCompile>
     <ClCompile Include="TextureFactory.cpp">
-      <Filter>Stuff</Filter>
+      <Filter>Factory</Filter>
     </ClCompile>
     <ClCompile Include="MeshFactory.cpp">
-      <Filter>Stuff</Filter>
+      <Filter>Factory</Filter>
     </ClCompile>
     <ClCompile Include="Sdl2Application.cpp">
       <Filter>Engine</Filter>

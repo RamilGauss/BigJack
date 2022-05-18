@@ -38,6 +38,38 @@ TTexture* TTextureFactory::Load(const std::string& absPath)
 
     stbi_image_free(data);
 
+    //GLenum format;
+    //if (nrComponents == 1)
+    //    format = GL_RED;
+    //else if (nrComponents == 3)
+    //    format = GL_RGB;
+    //else if (nrComponents == 4)
+    //    format = GL_RGBA;
+
+    //glBindTexture(GL_TEXTURE_2D, textureID);
+    //glTexImage2D(GL_TEXTURE_2D, 0, format, width, height, 0, format, GL_UNSIGNED_BYTE, data);
+    //glGenerateMipmap(GL_TEXTURE_2D);
+
+    glGenTextures(1, &pTexture->mId);
+    glBindTexture(GL_TEXTURE_2D, pTexture->mId); // all upcoming GL_TEXTURE_2D operations now have effect on this texture object
+    // set the texture wrapping parameters
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);	// set texture wrapping to GL_REPEAT (default wrapping method)
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
+    // set texture filtering parameters
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE); // This is required on WebGL for non power-of-two textures
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE); // Same
+
+    // load image, create texture and generate mipmaps
+    width = pTexture->mWidth;
+    height = pTexture->mHeight;
+
+    data = pTexture->mData;
+    glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, width, height, 0, GL_RGBA, GL_UNSIGNED_BYTE, data);
+    glGenerateMipmap(GL_TEXTURE_2D);
+
     return pTexture;
 }
 //----------------------------------------------------------------------------------------------

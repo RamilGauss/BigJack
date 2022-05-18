@@ -21,12 +21,12 @@ void TRenderableObject::SetMesh(TMesh* pMesh)
 {
     mMesh = pMesh;
 
-    glGenVertexArrays(1, &VAO);
-    glGenBuffers(1, &VBO);
+    glGenVertexArrays(1, &mVAO);
+    glGenBuffers(1, &mVBO);
 
-    glBindVertexArray(VAO);
+    glBindVertexArray(mVAO);
 
-    glBindBuffer(GL_ARRAY_BUFFER, VBO);
+    glBindBuffer(GL_ARRAY_BUFFER, mVBO);
     glBufferData(GL_ARRAY_BUFFER, mMesh->GetDataSize(), mMesh->GetPointData(), GL_STATIC_DRAW);
 
     // position attribute
@@ -37,53 +37,23 @@ void TRenderableObject::SetMesh(TMesh* pMesh)
     glEnableVertexAttribArray(1);
 }
 //-------------------------------------------------------------------------------------------------------
-void TRenderableObject::SetTexture(TTexture* pTexture)
+void TRenderableObject::SetTexture(const TTexture* pTexture)
 {
-    //GLenum format;
-    //if (nrComponents == 1)
-    //    format = GL_RED;
-    //else if (nrComponents == 3)
-    //    format = GL_RGB;
-    //else if (nrComponents == 4)
-    //    format = GL_RGBA;
-
-    //glBindTexture(GL_TEXTURE_2D, textureID);
-    //glTexImage2D(GL_TEXTURE_2D, 0, format, width, height, 0, format, GL_UNSIGNED_BYTE, data);
-    //glGenerateMipmap(GL_TEXTURE_2D);
-
-
     mTexture = pTexture;
-
-    glGenTextures(1, &texture);
-    glBindTexture(GL_TEXTURE_2D, texture); // all upcoming GL_TEXTURE_2D operations now have effect on this texture object
-    // set the texture wrapping parameters
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);	// set texture wrapping to GL_REPEAT (default wrapping method)
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
-    // set texture filtering parameters
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-    // load image, create texture and generate mipmaps
-    int width = mTexture->mWidth;
-    int height = mTexture->mHeight;
-    int nrChannels = mTexture->mBpp;
-
-    unsigned char* data = mTexture->mData;
-    glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, width, height, 0, GL_RGBA, GL_UNSIGNED_BYTE, data);
-    glGenerateMipmap(GL_TEXTURE_2D);
 }
 //-------------------------------------------------------------------------------------------------------
 void TRenderableObject::Draw()
 {
-    glBindVertexArray(VAO);
+    glBindVertexArray(mVAO);
     glActiveTexture(GL_TEXTURE0);
-    glBindTexture(GL_TEXTURE_2D, texture);
+    glBindTexture(GL_TEXTURE_2D, mTexture->mId);
     glDrawArrays(GL_TRIANGLES, 0, mMesh->GetPointCount());
 }
 //-------------------------------------------------------------------------------------------------------
 TRenderableObject::~TRenderableObject()
 {
-    glDeleteVertexArrays(1, &VAO);
-    glDeleteBuffers(1, &VBO);
+    glDeleteVertexArrays(1, &mVAO);
+    glDeleteBuffers(1, &mVBO);
 }
 //-------------------------------------------------------------------------------------------------------
 glm::mat4 TRenderableObject::GetMatrix() const

@@ -20,12 +20,10 @@ namespace nsGraphicEngine
     class DllExport TRenderableObject
     {
         TMesh* mMesh = nullptr;
-        TTexture* mTexture = nullptr;
+        const TTexture* mTexture = nullptr;
 
-        unsigned int VBO = 0;
-        unsigned int VAO = 0;
-
-        unsigned int texture = 0;
+        unsigned int mVBO = 0;
+        unsigned int mVAO = 0;
 
         glm::vec3 mPosition = glm::vec3(0.0f, 0.0f, 0.0f);
         glm::vec3 mRotation = glm::vec3(0.0f, 0.0f, 0.0f);
@@ -35,7 +33,7 @@ namespace nsGraphicEngine
         virtual ~TRenderableObject();
 
         void SetMesh(TMesh* pMesh);
-        void SetTexture(TTexture* pTexture);
+        void SetTexture(const TTexture* pTexture);
 
         void Draw();
 

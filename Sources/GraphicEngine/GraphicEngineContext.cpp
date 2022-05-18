@@ -50,14 +50,16 @@ void TGraphicEngineContext::Render()
 
     for (auto& camera : mCameras) {
 
+        camera->Begin();
+
         auto winSize = camera->GetWindowSize();
         auto winPos = camera->GetWindowPosition();
 
         // In OpenGL a lower left corner has (0,0), in BigJack a top left corner has (0,0)
-        glViewport(winPos.x, windowHeight - winSize.y - winPos.y, winSize.x, winSize.y);// TODO Window size.y - winPos.y!!!
+        glViewport(winPos.x, windowHeight - winSize.y - winPos.y, winSize.x, winSize.y);
 
-        glm::mat4 view = camera->GetMatrix();
-        glm::mat4 projection = glm::perspective(glm::radians(camera->GetZoom()), winSize.x / winSize.y, 0.1f, 100.0f);
+        glm::mat4 view = camera->GetViewMatrix();
+        glm::mat4 projection = camera->GetProjectionMatrix();
         mRenderableObjectShader->SetMat4("view", view);
         mRenderableObjectShader->SetMat4("projection", projection);
 
@@ -67,13 +69,13 @@ void TGraphicEngineContext::Render()
 
             renderableObject->Draw();
         }
-    }
-    // Draw Gui
-    if (mGuiCamera) {
-        auto winSize = mGuiCamera->GetWindowSize();
-        auto winPos = mGuiCamera->GetWindowPosition();
 
-        mImGuiContext.Render(winPos.x, windowHeight - winSize.y - winPos.y, winSize.x, winSize.y);
+        // Draw Gui
+        if (camera == mGuiCamera) {
+            mImGuiContext.Render(winPos.x, windowHeight - winSize.y - winPos.y, winSize.x, winSize.y);
+        }
+
+        camera->End();
     }
 }
 //--------------------------------------------------------------------------------------------
